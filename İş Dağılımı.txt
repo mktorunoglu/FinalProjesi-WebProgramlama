@@ -1,6 +1,5 @@
 Anasayfa: Rüveyda Sultan ANAÇOĞLU
-Bayi: Bedrettin Yusuf YURT
-Firma: Mehmet Kamil TORUNOĞLU
-Müşteri: Muhammet Ali KARAGÜZEL
-Yönetici: Umut Can KAYA
-
+Bayi Arayüzü: Bedrettin Yusuf YURT
+Firma Arayüzü: Mehmet Kamil TORUNOĞLU
+Müşteri Arayüzü: Muhammet Ali KARAGÜZEL
+Yönetici Arayüzü: Umut Can KAYA
