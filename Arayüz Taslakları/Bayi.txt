@@ -1,0 +1,56 @@
+ANASAYFA
+
+ÜRÜNLER:
+Stoktaki ürünler listelenir;
+- Ürün Adı
+- Ürün Modeli
+- Ürün Ebatı
+- Ürün Fiyatı
+- Garanti Süresi
+
+Stoktaki ürünler güncellenebilir;
+- Ürün Fiyatı
+
+SİPARİŞLER:
+Firmaya verilen siparişler listelenir;
+- Ürün Adı
+- Ürün Modeli
+- Ürün Ebatı
+- Ürün Adeti
+- Garanti Süresi
+- Satıs Fiyatı
+- Satıcı Adı
+- Siparis Durumu
+- Servis Bakım Durumu
+- Servis Bakım Islemi
+- Siparis Tarihi
+- Ödeme Yöntemi
+
+Müşterilerin siparişleri listelenir;
+- Ürün Adı
+- Ürün Modeli
+- Ürün Ebatı
+- Ürün Adeti
+- Garanti Süresi
+- Satıs Fiyatı
+- Müsteri Adı
+- Siparis Durumu
+- Servis Bakım Durumu
+- Servis Bakım Islemi
+- Siparis Tarihi
+- Ödeme Yöntemi
+
+Siparişler güncellenebilir;
+- Siparis Durumu
+- Servis Bakım Durumu
+- Servis Bakım Islemi
+
+MÜŞTERİLER:
+Sisteme kayıtlı müşteriler listelenir;
+- Müsteri Adı
+- Müsteri Soyadı
+- Dogum Tarihi
+- E-Posta Adresi
+- Ev ya da Is Adresi
+- Telefon Numarası
+

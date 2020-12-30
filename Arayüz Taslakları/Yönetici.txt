@@ -1,0 +1,28 @@
+ANASAYFA
+
+BAYİLER:
+Bayiler için bilgi güncelleme işlemleri yapılacak;
+- Bayi Adı
+- Kullanıcı Adı
+- Sifre
+- E-Posta Adresi
+- Is Adresi
+- Telefon Numarası
+
+Bayi ekleme ve silme islemleri yapılabilir.
+
+SİPARİŞLER:
+Firmaya bayilerden gelen siparişler izlenir: Her sipariş için;
+- Ürün Adı
+- Ürün Modeli
+- Ürün Ebatı
+- Ürün Adeti
+- Garanti Süresi
+- Satıs Fiyatı
+- Bayi Adı
+- Siparis Durumu
+- Servis Bakım Durumu
+- Servis Bakım Islemi
+- Siparis Tarihi
+- Ödeme Yöntemi
+
