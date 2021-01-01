@@ -1,0 +1,50 @@
+﻿@model LSYS.Models.Entity.TBL_MUSTERI
+@{
+    ViewBag.Title = "MusteriEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>AD </label>
+        @Html.TextBoxFor(u => u.AD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>SOYAD</label>
+        @Html.TextBoxFor(u => u.SOYAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>TELEFON</label>
+        @Html.TextBoxFor(u => u.TELEFON, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>ADRES</label>
+        @Html.TextBoxFor(u => u.ADRES, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>BAYI_ID</label>
+        @Html.TextBoxFor(u => u.BAYI_ID, new { @class = "form-control" })
+    </div>
+    
+    <div style="margin-top:15px">
+        <label>MAIL</label>
+        @Html.TextBoxFor(u => u.MAIL, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>KULLANICI_ADI</label>
+        @Html.TextBoxFor(u => u.KULLANICI_ADI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>SIFRE</label>
+        @Html.TextBoxFor(u => u.SIFRE, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>DOGUM_TARIHI</label>
+        @Html.TextBoxFor(u => u.DOGUM_TARIHI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Müşteri Ekle</button>
+    </div>
+</form>

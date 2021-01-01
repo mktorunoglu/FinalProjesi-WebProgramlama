@@ -1,0 +1,35 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_FIRMA>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Firma</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Firma ID</th>
+        <th>Kullanıcı ADI</th>
+        <th>Firma Adı</th>
+        <th>Yönetici ID</th>
+        <th>Telefon</th>
+        <th>Adres</th>
+        <th>Mail</th>
+
+    </tr>
+
+    @foreach (var frm in Model)
+    {
+<tr>
+    <td>@frm.FIRMA_ID</td>
+    <td>@frm.KULLANICI_ADI</td>
+    <td>@frm.FIRMA_ADI</td>
+    <td>@frm.YONETICI_ID</td>
+    <td>@frm.TELEFON</td>
+    <td>@frm.ADRES</td>
+    <td>@frm.MAIL</td>
+</tr>
+    }
+</table>

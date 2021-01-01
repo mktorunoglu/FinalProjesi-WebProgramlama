@@ -1,0 +1,75 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_URUN>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Ürün Sayfası</h2>
+
+
+@using (Html.BeginForm("Index", "Urun", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b>Aranacak Urun Adını Girin: &nbsp</b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+<table class=" table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>ADI</td>
+        <td>MODEL</td>
+        <td>EBAT</td>
+        <td>PERİYODİK BAKIM SÜRESİ</td>
+        <td>ALIŞ FİYAT</td>
+        <td>SATIŞ FİYAT</td>
+        <td>STOK ADEDİ</td>
+        <td>TEMIN SÜRESİ</td>
+        <td>STOK EŞİK DEĞERİ</td>
+        <td>KAR</td>
+        <td>REÇETE</td>
+        <td>DETAY</td>
+        <td>SİL</td>
+        <td>GÜNCELLE</td>
+
+    </tr>
+
+    @foreach (var urn in Model)
+    {
+<tr>
+    <td>@urn.URUN_ID</td>
+    <td>@urn.URUN_ADI</td>
+    <td>@urn.URUN_MODEL</td>
+    <td>@urn.URUN_EBAT</td>
+    <td>@urn.P_BAKIM_SURESI</td>
+    <td>@urn.ALIS_FIYAT</td>
+    <td>@urn.SATIS_FIYAT</td>
+    <td>@urn.STOK_ADEDI</td>
+    <td>@urn.TEMIN_SURESI</td>
+    <td>@urn.STOK_ESIK_DEGERI</td>
+    <td>@urn.KAR</td>
+
+    <td><a href="/kHammaddeler/Index/@urn.URUN_ID" class="btn btn-info">Reçete</a></td>
+    <td><a href="/UrunDetay/Index/@urn.URUN_ID" class="btn btn-info">Detay</a></td>
+
+    <td>
+        @Html.ActionLink("Sil", "UrunSil", new { id = urn.URUN_ID },
+   new
+            {
+                @class = "btn btn-danger",
+       onclick = "return confirm('Silmek İstiyor musunuz?')"
+            })
+    </td>
+
+    <td><a href="/Urun/UrunGetir/@urn.URUN_ID" class="btn btn-success">Güncelle</a></td>
+
+
+
+</tr>
+    }
+
+</table>
+
+<a href="/Urun/UrunEkle" class="btn btn-primary">Yeni Urun Ekle</a>

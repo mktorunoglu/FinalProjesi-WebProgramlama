@@ -1,0 +1,36 @@
+﻿@model LSYS.Models.Entity.TBL_SATIS
+@{
+    ViewBag.Title = "SatisEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>BAYİ ID</label>
+        @Html.TextBoxFor(u => u.BAYI_ID, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>MÜŞTERİ ID</label>
+        @Html.TextBoxFor(u => u.MUSTERI_ID, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>URUN_ID</label>
+        @Html.TextBoxFor(u => u.URUN_ID, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>ADET</label>
+        @Html.TextBoxFor(u => u.ADET, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>TARIH</label>
+        @Html.TextBoxFor(u => u.SATIS_TARIH, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Satış Yap</button>
+    </div>
+</form>

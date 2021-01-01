@@ -1,0 +1,31 @@
+﻿@model LSYS.Models.Entity.TBL_YONETICI
+@{
+    ViewBag.Title = "YoneticiGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>YoneticiGetir</h2>
+
+
+@using (Html.BeginForm("YoneticiGuncelle", "Yonetici", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(h => h.YONETICI_ID)
+        @Html.TextBoxFor(h => h.YONETICI_ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.YONETICI_AD)
+        @Html.TextBoxFor(h => h.YONETICI_AD, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.YONETICI_SOYAD)
+        @Html.TextBoxFor(h => h.YONETICI_SOYAD, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.KULLANICI_ADI)
+        @Html.TextBoxFor(h => h.KULLANICI_ADI, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.SIFRE)
+        @Html.TextBoxFor(h => h.SIFRE, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}

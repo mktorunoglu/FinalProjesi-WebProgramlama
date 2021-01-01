@@ -1,0 +1,34 @@
+﻿@model LSYS.Models.Entity.TBL_HAMMADDE
+@{
+    ViewBag.Title = "HammaddeEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div>
+        <label>Hammadde Adı</label>
+        <input type=" text" class="form-control" name="HAMMADDE_ADI" />
+    </div>
+
+    <div>
+        <label>Stok Adedi</label>
+        <input type="number" class="form-control" name="STOK_ADEDİ" />
+    </div>
+
+    <div>
+        <label>Stok Eşik Değeri</label>
+        <input type="number" class="form-control" name="STOK_ESİK_DEGERI" />
+    </div>
+
+    <div>
+        <label>Temin Süresi</label>
+        <input type="number" class="form-control" name="TEMIN_SURESI" />
+    </div>
+
+    <div style="margin-top: 15px">
+        <button class="btn btn-info" id="Btn1">Hammadde Ekle</button>
+    </div>
+
+</form>
+

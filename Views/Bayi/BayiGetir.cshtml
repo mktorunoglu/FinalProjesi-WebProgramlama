@@ -1,0 +1,38 @@
+﻿@model LSYS.Models.Entity.TBL_BAYI
+@{
+    ViewBag.Title = "BayiGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("BayiGuncelle", "Bayi", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <div style="margin-bottom:15px">
+            <label>Bayi ID</label>
+            @Html.TextBoxFor(b => b.BAYI_ID, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Bayi Adı</label>
+            @Html.TextBoxFor(b => b.BAYI_ADI, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Kullanıcı Adı</label>
+            @Html.TextBoxFor(b => b.KULLANICI_ADI, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Sifre</label>
+            @Html.TextBoxFor(b => b.SIFRE, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Telefon</label>
+            @Html.TextBoxFor(b => b.TELEFON, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Adres</label>
+            @Html.TextBoxFor(b => b.ADRES, new { @class = "form-control" })
+        </div>
+        <button class="btn btn-warning">Bayi Bilgilerini Guncelle</button>
+    </div>
+}
+
