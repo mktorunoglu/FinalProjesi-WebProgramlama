@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LSYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TBL_BAKIM">
+    <Key>
+      <PropertyRef Name="BAKIM_ID" />
+    </Key>
+    <Property Name="BAKIM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUSTERI_ID" Type="int" />
+    <Property Name="URUN_ID" Type="int" />
+    <Property Name="BAKIM_ISLEMI" Type="varchar" MaxLength="100" />
+    <Property Name="BAKIM_TARIHI" Type="date" />
+    <Property Name="BAYI_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_BAYI">
+    <Key>
+      <PropertyRef Name="BAYI_ID" />
+    </Key>
+    <Property Name="BAYI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BAYI_ADI" Type="varchar" MaxLength="10" />
+    <Property Name="KULLANICI_ADI" Type="varchar" MaxLength="10" />
+    <Property Name="SIFRE" Type="varchar" MaxLength="10" />
+    <Property Name="TELEFON" Type="varchar" MaxLength="10" />
+    <Property Name="ADRES" Type="varchar" MaxLength="100" />
+    <Property Name="FIRMA_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_FIRMA">
+    <Key>
+      <PropertyRef Name="FIRMA_ID" />
+    </Key>
+    <Property Name="FIRMA_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KULLANICI_ADI" Type="varchar" MaxLength="10" />
+    <Property Name="FIRMA_ADI" Type="varchar" MaxLength="20" />
+    <Property Name="YONETICI_ID" Type="int" />
+    <Property Name="TELEFON" Type="varchar" MaxLength="10" />
+    <Property Name="ADRES" Type="varchar" MaxLength="100" />
+    <Property Name="MAIL" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="TBL_HAMMADDE">
+    <Key>
+      <PropertyRef Name="HAMMADDE_ID" />
+    </Key>
+    <Property Name="HAMMADDE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HAMMADDE_ADI" Type="varchar" MaxLength="20" />
+    <Property Name="STOK_ADEDI" Type="int" />
+    <Property Name="STOK_ESIK_DEGERI" Type="int" />
+    <Property Name="TEMIN_SURESI" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_K_HAMMADELER">
+    <Key>
+      <PropertyRef Name="K_HAMMADELER_ID" />
+    </Key>
+    <Property Name="K_HAMMADELER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HAMMADDE_ID" Type="int" />
+    <Property Name="HAMMADDE_ADI" Type="varchar" MaxLength="20" />
+    <Property Name="URUN_ID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'LSYS.dbo.TBL_M_URUNLER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBL_M_URUNLER">
+    <Key>
+      <PropertyRef Name="M_URUNLER_ID" />
+    </Key>
+    <Property Name="M_URUNLER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUSTERI_ID" Type="int" />
+    <Property Name="URUN_ID" Type="int" />
+    <Property Name="P_BAKIM_SURESI" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TBL_MUSTERI">
+    <Key>
+      <PropertyRef Name="MUSTERI_ID" />
+    </Key>
+    <Property Name="MUSTERI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD" Type="varchar" MaxLength="10" />
+    <Property Name="SOYAD" Type="varchar" MaxLength="10" />
+    <Property Name="TELEFON" Type="varchar" MaxLength="10" />
+    <Property Name="ADRES" Type="varchar" MaxLength="50" />
+    <Property Name="MAIL" Type="varchar" MaxLength="20" />
+    <Property Name="BAYI_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_ODEME">
+    <Key>
+      <PropertyRef Name="ODEME_ID" />
+    </Key>
+    <Property Name="ODEME_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SIPARIS_ID" Type="int" />
+    <Property Name="ODEME_YONTEMI" Type="varchar" MaxLength="10" />
+    <Property Name="BAYI_ID" Type="int" />
+    <Property Name="FIRMA_ID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'LSYS.dbo.TBL_SATIS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBL_SATIS">
+    <Key>
+      <PropertyRef Name="SATIS_ID" />
+    </Key>
+    <Property Name="SATIS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BAYI_ID" Type="int" />
+    <Property Name="MUSTERI_ID" Type="int" />
+    <Property Name="URUN_ID" Type="int" />
+    <Property Name="SATIS_FIYAT" Type="int" />
+    <Property Name="ADET" Type="int" />
+    <Property Name="BIRIM_KAR" Type="int" />
+    <Property Name="TOPLAM_KAR" Type="int" StoreGeneratedPattern="Computed" />
+    <Property Name="MALIYET" Type="int" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="TBL_SIPARIS">
+    <Key>
+      <PropertyRef Name="SIPARIS_ID" />
+    </Key>
+    <Property Name="SIPARIS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SIPARIS_TARIHI" Type="date" />
+    <Property Name="BAYI_ID" Type="int" />
+    <Property Name="MALIYET" Type="int" />
+    <Property Name="TEMIN_SURESI" Type="int" />
+    <Property Name="FIRMA_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_SIPARIS_DETAY">
+    <Key>
+      <PropertyRef Name="SIPARIS_DETAY_ID" />
+    </Key>
+    <Property Name="SIPARIS_DETAY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SIPARIS_ID" Type="int" />
+    <Property Name="URUN_ID" Type="int" />
+    <Property Name="URUN_ADET" Type="int" />
+    <Property Name="ALIS_FIYAT" Type="int" />
+    <Property Name="TUTAR" Type="int" StoreGeneratedPattern="Computed" />
+    <Property Name="TEMIN_SURESI" Type="int" />
+    <Property Name="FIRMA_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_URUN">
+    <Key>
+      <PropertyRef Name="URUN_ID" />
+    </Key>
+    <Property Name="URUN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUN_ADI" Type="varchar" MaxLength="50" />
+    <Property Name="URUN_MODEL" Type="varchar" MaxLength="50" />
+    <Property Name="URUN_EBAT" Type="varchar" MaxLength="50" />
+    <Property Name="P_BAKIM_SURESI" Type="varchar" MaxLength="50" />
+    <Property Name="ALIS_FIYAT" Type="int" />
+    <Property Name="SATIS_FIYAT" Type="int" />
+    <Property Name="KAR" Type="int" />
+    <Property Name="STOK_ADEDI" Type="int" />
+    <Property Name="URUN_RESMI" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TBL_YONETICI">
+    <Key>
+      <PropertyRef Name="YONETICI_ID" />
+    </Key>
+    <Property Name="YONETICI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIRMA_ID" Type="int" />
+    <Property Name="YONETICI_AD" Type="varchar" MaxLength="10" />
+    <Property Name="YONETICI_SOYAD" Type="varchar" MaxLength="10" />
+    <Property Name="KULLANICI_ADI" Type="varchar" MaxLength="10" />
+    <Property Name="SIFRE" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK__TBL_BAKIM__BAYI___4CA06362">
+    <End Role="TBL_BAYI" Type="Self.TBL_BAYI" Multiplicity="0..1" />
+    <End Role="TBL_BAKIM" Type="Self.TBL_BAKIM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_BAYI">
+        <PropertyRef Name="BAYI_ID" />
+      </Principal>
+      <Dependent Role="TBL_BAKIM">
+        <PropertyRef Name="BAYI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_BAKIM__MUSTE__4AB81AF0">
+    <End Role="TBL_MUSTERI" Type="Self.TBL_MUSTERI" Multiplicity="0..1" />
+    <End Role="TBL_BAKIM" Type="Self.TBL_BAKIM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MUSTERI">
+        <PropertyRef Name="MUSTERI_ID" />
+      </Principal>
+      <Dependent Role="TBL_BAKIM">
+        <PropertyRef Name="MUSTERI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_BAKIM__URUN___4BAC3F29">
+    <End Role="TBL_URUN" Type="Self.TBL_URUN" Multiplicity="0..1" />
+    <End Role="TBL_BAKIM" Type="Self.TBL_BAKIM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_URUN">
+        <PropertyRef Name="URUN_ID" />
+      </Principal>
+      <Dependent Role="TBL_BAKIM">
+        <PropertyRef Name="URUN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_BAYI__FIRMA___32E0915F">
+    <End Role="TBL_FIRMA" Type="Self.TBL_FIRMA" Multiplicity="0..1" />
+    <End Role="TBL_BAYI" Type="Self.TBL_BAYI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FIRMA">
+        <PropertyRef Name="FIRMA_ID" />
+      </Principal>
+      <Dependent Role="TBL_BAYI">
+        <PropertyRef Name="FIRMA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_FIRMA__YONET__276EDEB3">
+    <End Role="TBL_YONETICI" Type="Self.TBL_YONETICI" Multiplicity="0..1" />
+    <End Role="TBL_FIRMA" Type="Self.TBL_FIRMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_YONETICI">
+        <PropertyRef Name="YONETICI_ID" />
+      </Principal>
+      <Dependent Role="TBL_FIRMA">
+        <PropertyRef Name="YONETICI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_K_HAM__HAMMA__300424B4">
+    <End Role="TBL_HAMMADDE" Type="Self.TBL_HAMMADDE" Multiplicity="0..1" />
+    <End Role="TBL_K_HAMMADELER" Type="Self.TBL_K_HAMMADELER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_HAMMADDE">
+        <PropertyRef Name="HAMMADDE_ID" />
+      </Principal>
+      <Dependent Role="TBL_K_HAMMADELER">
+        <PropertyRef Name="HAMMADDE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_K_HAM__URUN___2F10007B">
+    <End Role="TBL_URUN" Type="Self.TBL_URUN" Multiplicity="0..1" />
+    <End Role="TBL_K_HAMMADELER" Type="Self.TBL_K_HAMMADELER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_URUN">
+        <PropertyRef Name="URUN_ID" />
+      </Principal>
+      <Dependent Role="TBL_K_HAMMADELER">
+        <PropertyRef Name="URUN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_M_URU__MUSTE__45F365D3">
+    <End Role="TBL_MUSTERI" Type="Self.TBL_MUSTERI" Multiplicity="0..1" />
+    <End Role="TBL_M_URUNLER" Type="Self.TBL_M_URUNLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MUSTERI">
+        <PropertyRef Name="MUSTERI_ID" />
+      </Principal>
+      <Dependent Role="TBL_M_URUNLER">
+        <PropertyRef Name="MUSTERI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_M_URU__URUN___46E78A0C">
+    <End Role="TBL_URUN" Type="Self.TBL_URUN" Multiplicity="0..1" />
+    <End Role="TBL_M_URUNLER" Type="Self.TBL_M_URUNLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_URUN">
+        <PropertyRef Name="URUN_ID" />
+      </Principal>
+      <Dependent Role="TBL_M_URUNLER">
+        <PropertyRef Name="URUN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_MUSTE__BAYI___440B1D61">
+    <End Role="TBL_BAYI" Type="Self.TBL_BAYI" Multiplicity="0..1" />
+    <End Role="TBL_MUSTERI" Type="Self.TBL_MUSTERI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_BAYI">
+        <PropertyRef Name="BAYI_ID" />
+      </Principal>
+      <Dependent Role="TBL_MUSTERI">
+        <PropertyRef Name="BAYI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_ODEME__BAYI___3B75D760">
+    <End Role="TBL_BAYI" Type="Self.TBL_BAYI" Multiplicity="0..1" />
+    <End Role="TBL_ODEME" Type="Self.TBL_ODEME" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_BAYI">
+        <PropertyRef Name="BAYI_ID" />
+      </Principal>
+      <Dependent Role="TBL_ODEME">
+        <PropertyRef Name="BAYI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_ODEME__FIRMA__3C69FB99">
+    <End Role="TBL_FIRMA" Type="Self.TBL_FIRMA" Multiplicity="0..1" />
+    <End Role="TBL_ODEME" Type="Self.TBL_ODEME" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FIRMA">
+        <PropertyRef Name="FIRMA_ID" />
+      </Principal>
+      <Dependent Role="TBL_ODEME">
+        <PropertyRef Name="FIRMA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_ODEME__SIPAR__3A81B327">
+    <End Role="TBL_SIPARIS" Type="Self.TBL_SIPARIS" Multiplicity="0..1" />
+    <End Role="TBL_ODEME" Type="Self.TBL_ODEME" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_SIPARIS">
+        <PropertyRef Name="SIPARIS_ID" />
+      </Principal>
+      <Dependent Role="TBL_ODEME">
+        <PropertyRef Name="SIPARIS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_SATIS__BAYI___5070F446">
+    <End Role="TBL_BAYI" Type="Self.TBL_BAYI" Multiplicity="0..1" />
+    <End Role="TBL_SATIS" Type="Self.TBL_SATIS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_BAYI">
+        <PropertyRef Name="BAYI_ID" />
+      </Principal>
+      <Dependent Role="TBL_SATIS">
+        <PropertyRef Name="BAYI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_SATIS__MUSTE__4E88ABD4">
+    <End Role="TBL_MUSTERI" Type="Self.TBL_MUSTERI" Multiplicity="0..1" />
+    <End Role="TBL_SATIS" Type="Self.TBL_SATIS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MUSTERI">
+        <PropertyRef Name="MUSTERI_ID" />
+      </Principal>
+      <Dependent Role="TBL_SATIS">
+        <PropertyRef Name="MUSTERI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_SATIS__URUN___4F7CD00D">
+    <End Role="TBL_URUN" Type="Self.TBL_URUN" Multiplicity="0..1" />
+    <End Role="TBL_SATIS" Type="Self.TBL_SATIS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_URUN">
+        <PropertyRef Name="URUN_ID" />
+      </Principal>
+      <Dependent Role="TBL_SATIS">
+        <PropertyRef Name="URUN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_SIPAR__BAYI___36B12243">
+    <End Role="TBL_BAYI" Type="Self.TBL_BAYI" Multiplicity="0..1" />
+    <End Role="TBL_SIPARIS" Type="Self.TBL_SIPARIS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_BAYI">
+        <PropertyRef Name="BAYI_ID" />
+      </Principal>
+      <Dependent Role="TBL_SIPARIS">
+        <PropertyRef Name="BAYI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_SIPAR__FIRMA__37A5467C">
+    <End Role="TBL_FIRMA" Type="Self.TBL_FIRMA" Multiplicity="0..1" />
+    <End Role="TBL_SIPARIS" Type="Self.TBL_SIPARIS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FIRMA">
+        <PropertyRef Name="FIRMA_ID" />
+      </Principal>
+      <Dependent Role="TBL_SIPARIS">
+        <PropertyRef Name="FIRMA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_SIPAR__FIRMA__403A8C7D">
+    <End Role="TBL_FIRMA" Type="Self.TBL_FIRMA" Multiplicity="0..1" />
+    <End Role="TBL_SIPARIS_DETAY" Type="Self.TBL_SIPARIS_DETAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FIRMA">
+        <PropertyRef Name="FIRMA_ID" />
+      </Principal>
+      <Dependent Role="TBL_SIPARIS_DETAY">
+        <PropertyRef Name="FIRMA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_SIPAR__SIPAR__3F466844">
+    <End Role="TBL_SIPARIS" Type="Self.TBL_SIPARIS" Multiplicity="0..1" />
+    <End Role="TBL_SIPARIS_DETAY" Type="Self.TBL_SIPARIS_DETAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_SIPARIS">
+        <PropertyRef Name="SIPARIS_ID" />
+      </Principal>
+      <Dependent Role="TBL_SIPARIS_DETAY">
+        <PropertyRef Name="SIPARIS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_SIPAR__URUN___412EB0B6">
+    <End Role="TBL_URUN" Type="Self.TBL_URUN" Multiplicity="0..1" />
+    <End Role="TBL_SIPARIS_DETAY" Type="Self.TBL_SIPARIS_DETAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_URUN">
+        <PropertyRef Name="URUN_ID" />
+      </Principal>
+      <Dependent Role="TBL_SIPARIS_DETAY">
+        <PropertyRef Name="URUN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TBL_YONET__FIRMA__267ABA7A">
+    <End Role="TBL_FIRMA" Type="Self.TBL_FIRMA" Multiplicity="0..1" />
+    <End Role="TBL_YONETICI" Type="Self.TBL_YONETICI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FIRMA">
+        <PropertyRef Name="FIRMA_ID" />
+      </Principal>
+      <Dependent Role="TBL_YONETICI">
+        <PropertyRef Name="FIRMA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LSYSModelStoreContainer">
+    <EntitySet Name="TBL_BAKIM" EntityType="Self.TBL_BAKIM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_BAYI" EntityType="Self.TBL_BAYI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_FIRMA" EntityType="Self.TBL_FIRMA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_HAMMADDE" EntityType="Self.TBL_HAMMADDE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_K_HAMMADELER" EntityType="Self.TBL_K_HAMMADELER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MUSTERI" EntityType="Self.TBL_MUSTERI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_ODEME" EntityType="Self.TBL_ODEME" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_SIPARIS" EntityType="Self.TBL_SIPARIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_SIPARIS_DETAY" EntityType="Self.TBL_SIPARIS_DETAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_URUN" EntityType="Self.TBL_URUN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_YONETICI" EntityType="Self.TBL_YONETICI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_M_URUNLER" EntityType="Self.TBL_M_URUNLER" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBL_M_URUNLER].[M_URUNLER_ID] AS [M_URUNLER_ID], 
+    [TBL_M_URUNLER].[MUSTERI_ID] AS [MUSTERI_ID], 
+    [TBL_M_URUNLER].[URUN_ID] AS [URUN_ID], 
+    [TBL_M_URUNLER].[P_BAKIM_SURESI] AS [P_BAKIM_SURESI]
+    FROM [dbo].[TBL_M_URUNLER] AS [TBL_M_URUNLER]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBL_SATIS" EntityType="Self.TBL_SATIS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBL_SATIS].[SATIS_ID] AS [SATIS_ID], 
+    [TBL_SATIS].[BAYI_ID] AS [BAYI_ID], 
+    [TBL_SATIS].[MUSTERI_ID] AS [MUSTERI_ID], 
+    [TBL_SATIS].[URUN_ID] AS [URUN_ID], 
+    [TBL_SATIS].[SATIS_FIYAT] AS [SATIS_FIYAT], 
+    [TBL_SATIS].[ADET] AS [ADET], 
+    [TBL_SATIS].[BIRIM_KAR] AS [BIRIM_KAR], 
+    [TBL_SATIS].[TOPLAM_KAR] AS [TOPLAM_KAR], 
+    [TBL_SATIS].[MALIYET] AS [MALIYET]
+    FROM [dbo].[TBL_SATIS] AS [TBL_SATIS]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__TBL_BAKIM__BAYI___4CA06362" Association="Self.FK__TBL_BAKIM__BAYI___4CA06362">
+      <End Role="TBL_BAYI" EntitySet="TBL_BAYI" />
+      <End Role="TBL_BAKIM" EntitySet="TBL_BAKIM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_BAKIM__MUSTE__4AB81AF0" Association="Self.FK__TBL_BAKIM__MUSTE__4AB81AF0">
+      <End Role="TBL_MUSTERI" EntitySet="TBL_MUSTERI" />
+      <End Role="TBL_BAKIM" EntitySet="TBL_BAKIM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_BAKIM__URUN___4BAC3F29" Association="Self.FK__TBL_BAKIM__URUN___4BAC3F29">
+      <End Role="TBL_URUN" EntitySet="TBL_URUN" />
+      <End Role="TBL_BAKIM" EntitySet="TBL_BAKIM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_BAYI__FIRMA___32E0915F" Association="Self.FK__TBL_BAYI__FIRMA___32E0915F">
+      <End Role="TBL_FIRMA" EntitySet="TBL_FIRMA" />
+      <End Role="TBL_BAYI" EntitySet="TBL_BAYI" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_FIRMA__YONET__276EDEB3" Association="Self.FK__TBL_FIRMA__YONET__276EDEB3">
+      <End Role="TBL_YONETICI" EntitySet="TBL_YONETICI" />
+      <End Role="TBL_FIRMA" EntitySet="TBL_FIRMA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_K_HAM__HAMMA__300424B4" Association="Self.FK__TBL_K_HAM__HAMMA__300424B4">
+      <End Role="TBL_HAMMADDE" EntitySet="TBL_HAMMADDE" />
+      <End Role="TBL_K_HAMMADELER" EntitySet="TBL_K_HAMMADELER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_K_HAM__URUN___2F10007B" Association="Self.FK__TBL_K_HAM__URUN___2F10007B">
+      <End Role="TBL_URUN" EntitySet="TBL_URUN" />
+      <End Role="TBL_K_HAMMADELER" EntitySet="TBL_K_HAMMADELER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_M_URU__MUSTE__45F365D3" Association="Self.FK__TBL_M_URU__MUSTE__45F365D3">
+      <End Role="TBL_MUSTERI" EntitySet="TBL_MUSTERI" />
+      <End Role="TBL_M_URUNLER" EntitySet="TBL_M_URUNLER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_M_URU__URUN___46E78A0C" Association="Self.FK__TBL_M_URU__URUN___46E78A0C">
+      <End Role="TBL_URUN" EntitySet="TBL_URUN" />
+      <End Role="TBL_M_URUNLER" EntitySet="TBL_M_URUNLER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_MUSTE__BAYI___440B1D61" Association="Self.FK__TBL_MUSTE__BAYI___440B1D61">
+      <End Role="TBL_BAYI" EntitySet="TBL_BAYI" />
+      <End Role="TBL_MUSTERI" EntitySet="TBL_MUSTERI" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_ODEME__BAYI___3B75D760" Association="Self.FK__TBL_ODEME__BAYI___3B75D760">
+      <End Role="TBL_BAYI" EntitySet="TBL_BAYI" />
+      <End Role="TBL_ODEME" EntitySet="TBL_ODEME" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_ODEME__FIRMA__3C69FB99" Association="Self.FK__TBL_ODEME__FIRMA__3C69FB99">
+      <End Role="TBL_FIRMA" EntitySet="TBL_FIRMA" />
+      <End Role="TBL_ODEME" EntitySet="TBL_ODEME" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_ODEME__SIPAR__3A81B327" Association="Self.FK__TBL_ODEME__SIPAR__3A81B327">
+      <End Role="TBL_SIPARIS" EntitySet="TBL_SIPARIS" />
+      <End Role="TBL_ODEME" EntitySet="TBL_ODEME" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_SATIS__BAYI___5070F446" Association="Self.FK__TBL_SATIS__BAYI___5070F446">
+      <End Role="TBL_BAYI" EntitySet="TBL_BAYI" />
+      <End Role="TBL_SATIS" EntitySet="TBL_SATIS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_SATIS__MUSTE__4E88ABD4" Association="Self.FK__TBL_SATIS__MUSTE__4E88ABD4">
+      <End Role="TBL_MUSTERI" EntitySet="TBL_MUSTERI" />
+      <End Role="TBL_SATIS" EntitySet="TBL_SATIS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_SATIS__URUN___4F7CD00D" Association="Self.FK__TBL_SATIS__URUN___4F7CD00D">
+      <End Role="TBL_URUN" EntitySet="TBL_URUN" />
+      <End Role="TBL_SATIS" EntitySet="TBL_SATIS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_SIPAR__BAYI___36B12243" Association="Self.FK__TBL_SIPAR__BAYI___36B12243">
+      <End Role="TBL_BAYI" EntitySet="TBL_BAYI" />
+      <End Role="TBL_SIPARIS" EntitySet="TBL_SIPARIS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_SIPAR__FIRMA__37A5467C" Association="Self.FK__TBL_SIPAR__FIRMA__37A5467C">
+      <End Role="TBL_FIRMA" EntitySet="TBL_FIRMA" />
+      <End Role="TBL_SIPARIS" EntitySet="TBL_SIPARIS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_SIPAR__FIRMA__403A8C7D" Association="Self.FK__TBL_SIPAR__FIRMA__403A8C7D">
+      <End Role="TBL_FIRMA" EntitySet="TBL_FIRMA" />
+      <End Role="TBL_SIPARIS_DETAY" EntitySet="TBL_SIPARIS_DETAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_SIPAR__SIPAR__3F466844" Association="Self.FK__TBL_SIPAR__SIPAR__3F466844">
+      <End Role="TBL_SIPARIS" EntitySet="TBL_SIPARIS" />
+      <End Role="TBL_SIPARIS_DETAY" EntitySet="TBL_SIPARIS_DETAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_SIPAR__URUN___412EB0B6" Association="Self.FK__TBL_SIPAR__URUN___412EB0B6">
+      <End Role="TBL_URUN" EntitySet="TBL_URUN" />
+      <End Role="TBL_SIPARIS_DETAY" EntitySet="TBL_SIPARIS_DETAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TBL_YONET__FIRMA__267ABA7A" Association="Self.FK__TBL_YONET__FIRMA__267ABA7A">
+      <End Role="TBL_FIRMA" EntitySet="TBL_FIRMA" />
+      <End Role="TBL_YONETICI" EntitySet="TBL_YONETICI" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
