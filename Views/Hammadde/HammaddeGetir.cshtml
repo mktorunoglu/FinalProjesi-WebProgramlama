@@ -1,0 +1,29 @@
+﻿@model LSYS.Models.Entity.TBL_HAMMADDE
+@{
+    ViewBag.Title = "HammaddeGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("HammaddeGuncelle", "Hammadde", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(h => h.HAMMADDE_ID)
+        @Html.TextBoxFor(h => h.HAMMADDE_ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.HAMMADDE_ADI)
+        @Html.TextBoxFor(h => h.HAMMADDE_ADI, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.STOK_ADEDI)
+        @Html.TextBoxFor(h => h.STOK_ADEDI, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.STOK_ESIK_DEGERI)
+        @Html.TextBoxFor(h => h.STOK_ESIK_DEGERI, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.TEMIN_SURESI)
+        @Html.TextBoxFor(h => h.TEMIN_SURESI, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

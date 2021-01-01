@@ -1,0 +1,52 @@
+﻿@model LSYS.Models.Entity.TBL_URUN
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>URUN_ADI</label>
+        @Html.TextBoxFor(u => u.URUN_ADI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>MODEL</label>
+        @Html.TextBoxFor(u => u.URUN_MODEL, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>EBAT</label>
+        @Html.TextBoxFor(u => u.URUN_EBAT, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>BAKIM SURESI</label>
+        @Html.TextBoxFor(u => u.P_BAKIM_SURESI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>ALIS FIYAT</label>
+        @Html.TextBoxFor(u => u.ALIS_FIYAT, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>SATIS FIYAT</label>
+        @Html.TextBoxFor(u => u.SATIS_FIYAT, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>STOK ADEDI</label>
+        @Html.TextBoxFor(u => u.STOK_ADEDI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>TEMIN_SURESI</label>
+        @Html.TextBoxFor(u => u.TEMIN_SURESI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>STOK_ESIK_DEGERI</label>
+        @Html.TextBoxFor(u => u.STOK_ESIK_DEGERI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>KAR</label>
+        @Html.TextBoxFor(u => u.KAR, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ürün Ekle</button>
+    </div>
+</form>

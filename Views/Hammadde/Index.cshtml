@@ -1,0 +1,36 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_HAMMADDE>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2>Hammaddeler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>HAMMADDE ID</th>
+        <th>HAMMADDE ADI</th>
+        <th>STOK ADEDİ</th>
+        <th>STOK EŞİK DEĞERİ</th>
+        <th>TEMİN SÜRESİ</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+
+    @foreach (var hmd in Model)
+    {
+        <tr>
+            <td>@hmd.HAMMADDE_ID</td>
+            <td>@hmd.HAMMADDE_ADI</td>
+            <td>@hmd.STOK_ADEDI</td>
+            <td>@hmd.STOK_ESIK_DEGERI</td>
+            <td>@hmd.TEMIN_SURESI</td>
+            <td><a href="/Hammadde/HammaddeSil/@hmd.HAMMADDE_ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Hammadde/HammaddeGetir/@hmd.HAMMADDE_ID" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/Hammadde/HammaddeEkle/" class="btn btn-primary">Yeni Hammadde Ekle</a>

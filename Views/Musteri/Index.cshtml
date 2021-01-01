@@ -1,0 +1,54 @@
+﻿@using LSYS.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBL_MUSTERI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Müşteriler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Müşteri ID</th>
+        <th>ADI</th>
+        <th>SOYADI</th>
+        <th>TELEFON</th>
+        <th>ADRES</th>
+        <th>BAYİ ID</th>
+        <th>MAIL</th>
+        <th>KULLANICI ADI</th>
+        <th>SIFRE</th>
+        <th>DOGUM TARIHI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+
+    @foreach (var mst in Model)
+    {
+        <tr>
+            <td>@mst.MUSTERI_ID</td>
+            <td>@mst.AD</td>
+            <td>@mst.SOYAD</td>
+            <td>@mst.TELEFON</td>
+            <td>@mst.ADRES</td>
+            <td>@mst.BAYI_ID</td>
+            <td>@mst.MAIL</td>
+            <td>@mst.KULLANICI_ADI</td>
+            <td>@mst.SIFRE</td>
+            <td>@mst.DOGUM_TARIHI</td>
+            
+
+
+
+
+            <td><a href="/Musteri/MusteriSil/@mst.MUSTERI_ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Musteri/MusteriGetir/@mst.MUSTERI_ID" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model,sayfa => Url.Action("Index" , new { sayfa }))
+
+<a href="/Musteri/MusteriEkle/" class="btn btn-primary">Yeni Müşteri Ekle</a>

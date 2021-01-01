@@ -1,0 +1,37 @@
+﻿@model LSYS.Models.Entity.TBL_YONETICI
+@{
+    ViewBag.Title = "YoneticiEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>YoneticiEkle</h2>
+
+
+<form class="form-group" method="post">
+    <div></div>
+    <div>
+        <label>Yönetici Adı</label>
+        <input type=" text" class="form-control" name="YONETICI_AD" />
+    </div>
+
+    <div>
+        <label>Yönetici Soyadı</label>
+        <input type="text" class="form-control" name="YONETICI_SOYAD" />
+    </div>
+
+    <div>
+        <label>Kullanıcı Adı</label>
+        <input type="text" class="form-control" name="KULLANICI_ADI" />
+    </div>
+
+    <div>
+        <label>Şife</label>
+        <input type="text" class="form-control" name="SIFRE" />
+    </div>
+
+    <div style="margin-top: 15px">
+        <button class="btn btn-info" id="Btn1">Yönetici Ekle</button>
+    </div>
+
+</form>
+

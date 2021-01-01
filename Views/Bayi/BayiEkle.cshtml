@@ -1,0 +1,41 @@
+﻿@model LSYS.Models.Entity.TBL_BAYI
+@{
+    ViewBag.Title = "BayiEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Bayi Adı</label>
+        @Html.TextBoxFor(y => y.BAYI_ADI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(y => y.KULLANICI_ADI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Şifre</label>
+        @Html.TextBoxFor(y => y.SIFRE, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Telefon</label>
+        @Html.TextBoxFor(y => y.TELEFON, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Adres</label>
+        @Html.TextBoxFor(y => y.ADRES, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Firma ID</label>
+        @Html.TextBoxFor(y => y.FIRMA_ID, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>MAIL</label>
+        @Html.TextBoxFor(y => y.MAIL, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Bayi Ekle</button>
+    </div>
+</form>
+

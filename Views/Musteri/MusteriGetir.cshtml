@@ -1,0 +1,46 @@
+﻿@model LSYS.Models.Entity.TBL_MUSTERI
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>MusteriGetir</h2>
+
+
+@using (Html.BeginForm("MusteriGuncelle", "Musteri", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(h => h.MUSTERI_ID)
+    @Html.TextBoxFor(h => h.MUSTERI_ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(h => h.AD)
+    @Html.TextBoxFor(h => h.AD, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(h => h.SOYAD)
+    @Html.TextBoxFor(h => h.SOYAD, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(h => h.TELEFON)
+    @Html.TextBoxFor(h => h.TELEFON, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(h => h.ADRES)
+    @Html.TextBoxFor(h => h.ADRES, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(h => h.BAYI_ID)
+    @Html.TextBoxFor(h => h.BAYI_ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(h => h.MAIL)
+    @Html.TextBoxFor(h => h.MAIL, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(h => h.KULLANICI_ADI)
+    @Html.TextBoxFor(h => h.KULLANICI_ADI, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(h => h.SIFRE)
+    @Html.TextBoxFor(h => h.SIFRE, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(h => h.DOGUM_TARIHI)
+    @Html.TextBoxFor(h => h.DOGUM_TARIHI, new { @class = "form-control" })
+</div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
