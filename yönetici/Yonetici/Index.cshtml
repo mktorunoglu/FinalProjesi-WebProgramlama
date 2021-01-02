@@ -1,0 +1,36 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_YONETICI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yoneticiler</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Yonetıcı ID</th>
+        <th>Yonetici ADI</th>
+        <th>Soyad</th>
+        <th>Kullanıcı Adı</th>
+        <th>Şifre</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+
+    @foreach (var ynt in Model)
+    {
+        <tr>
+            <td>@ynt.YONETICI_ID</td>
+            <td>@ynt.YONETICI_AD</td>
+            <td>@ynt.YONETICI_SOYAD</td>
+            <td>@ynt.KULLANICI_ADI</td>
+            <td>@ynt.SIFRE</td>
+            <td><a href="/Yonetici/YoneticiSil/@ynt.YONETICI_ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Yonetici/YoneticiGetir/@ynt.YONETICI_ID" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/Yonetici/YoneticiEkle/" class="btn btn-primary">Yeni Yonetici Ekle</a>
