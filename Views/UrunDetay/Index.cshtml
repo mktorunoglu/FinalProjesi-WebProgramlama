@@ -58,53 +58,35 @@
                             </div>
                             <div class="col-12 col-sm-6">
                                 <h1 class="my-3">@x.URUN_ADI </h1>
-                                <p> İşletmenizde, fabrikanızda kuracağınız hidrolik yük asansörüyle hem enerjiden tasarruf yapabilir hem de zamandan tasarruf sağlayabilirsiniz</p>
+                                <p> <font size="3"><b>İşletmenizde, fabrikanızda kuracağınız hidrolik yük asansörüyle hem enerjiden tasarruf yapabilir hem de zamandan tasarruf sağlayabilirsiniz</b> </font></p>
                                 <hr>
 
-                                <h4>ID</h4>
+                                <h2>ID</h2>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-default text-center active">
-                                        <input type="radio" name="color_option" id="color_option1" autocomplete="off" checked="">
-                                        @x.URUN_ID
-
+                                    <label class="btn btn-default text-center" >
+                                        <input type="radio" name="color_option" id="color_option1" autocomplete="off">
+                                        <span class="text-xl">@x.URUN_ID</span>
+                                        <br>
+                                        @*Sınıf 1*@
                                     </label>
 
                                 </div>
 
-                                <h4>Model</h4>
+                                <h2>Model</h2>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-default text-center active">
-                                        <input type="radio" name="color_option" id="color_option1" autocomplete="off" checked="">
-                                        @x.URUN_MODEL
-                                        @*<br>
-                                            <i class="fas fa-circle fa-2x text-gray"></i>*@
-                                    </label>
-                                    @*<label class="btn btn-default text-center">
-                                            <input type="radio" name="color_option" id="color_option2" autocomplete="off">
-                                            Mavi
-                                            <br>
-                                            <i class="fas fa-circle fa-2x text-blue"></i>
-                                        </label>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                         <label class="btn btn-default text-center">
-                                            <input type="radio" name="color_option" id="color_option3" autocomplete="off">
-                                            Siyah
+                                            <input type="radio" name="color_option" id="color_option1" autocomplete="off">
+                                            <span class="text-xl">@x.URUN_MODEL</span>
                                             <br>
-                                            <i class="fas fa-circle fa-2x text-black"></i>
+                                            @*Sınıf 1*@
                                         </label>
-                                        <label class="btn btn-default text-center">
-                                            <input type="radio" name="color_option" id="color_option4" autocomplete="off">
-                                            Kırmızı
-                                            <br>
-                                            <i class="fas fa-circle fa-2x text-red"></i>
-                                        </label>
-                                        <label class="btn btn-default text-center">
-                                            <input type="radio" name="color_option" id="color_option5" autocomplete="off">
-                                            Turuncu
-                                            <br>
-                                            <i class="fas fa-circle fa-2x text-orange"></i>
-                                        </label>*@
+
+                                    </div>
+
                                 </div>
-                                <h4 class="mt-3">Ebat @*<small>Lütfen 1 Tane Seçin</small>*@</h4>
+
+                                <h2 class="mt-3">Ebat @*<small>Lütfen 1 Tane Seçin</small>*@</h2>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-default text-center">
                                         <input type="radio" name="color_option" id="color_option1" autocomplete="off">
@@ -112,31 +94,18 @@
                                         <br>
                                         @*Sınıf 1*@
                                     </label>
-                                    @*<label class="btn btn-default text-center">
-                                            <input type="radio" name="color_option" id="color_option1" autocomplete="off">
-                                            <span class="text-xl">A+</span>
-                                            <br>
-                                            Sınıf 2
-                                        </label>
-                                        <label class="btn btn-default text-center">
-                                            <input type="radio" name="color_option" id="color_option1" autocomplete="off">
-                                            <span class="text-xl">A++</span>
-                                            <br>
-                                            Sınıf 3
-                                        </label>
-                                        <label class="btn btn-default text-center">
-                                            <input type="radio" name="color_option" id="color_option1" autocomplete="off">
-                                            <span class="text-xl">A+++</span>
-                                            <br>
-                                            Sınıf 4
-                                        </label>*@
+                                    
                                 </div>
                                 <div class="bg-gray py-2 px-3 mt-4">
                                     <h2 class="mb-0">
-                                        ₺@x.SATIS_FIYAT
+                                        Satış Fiyat: ₺@x.SATIS_FIYAT
                                     </h2>
+                                    
+                                </div>
+                                 <div class="bg-gray py-2 px-3 mt-4">
+                                    
                                     <h4 class="mt-0">
-                                        <small>Alış Fiyat: ₺@x.ALIS_FIYAT </small>
+                                       Alış Fiyat: ₺@x.ALIS_FIYAT 
                                     </h4>
                                 </div>
                                 <div class="mt-4">
@@ -151,7 +120,21 @@
                                         <i class="fas fa-clock fa-lg mr-2"></i>
                                         Temin Süresi: @x.TEMIN_SURESI gün
                                     </div>
+                                    <div>
+                                        <hr />
+                                    </div>
+                                    <div>
+                                        <td>
+                                            <a href="/kHammaddeler/Index/@x.URUN_ID" class="btn btn-primary btn-lg btn-flat">
+                                                <i class="fas fa-list"></i>
+                                                
+                                                REÇETE
+                                            </a>
+                                        </td>
+                                    </div>
+                                    
                                 </div>
+
                                 @*<div class="mt-4 product-share">
                                         <a href="#" class="text-gray">
                                             <i class="fab fa-facebook-square fa-2x"></i>
