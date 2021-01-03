@@ -4,19 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LSYS.Models.Entity;
-using PagedList;
-using PagedList.Mvc;
 namespace LSYS.Controllers
 {
     public class MusteriController : Controller
     {
         // GET: Musteri
         LSYSEntities db = new LSYSEntities();
-        public ActionResult Index(int sayfa = 1)
+        public ActionResult Index(string p)
         {
-            //var degerler = db.TBL_MUSTERI.ToList();
-            var degerler = db.TBL_MUSTERI.ToList().ToPagedList(sayfa, 6);
-            return View(degerler);
+            var musteriler = from u in db.TBL_MUSTERI select u;
+            if (!string.IsNullOrEmpty(p))
+            {
+                musteriler = musteriler.Where(m => m.AD.Contains(p));
+            }
+           
+            return View(musteriler.ToList());
         }
         [HttpGet]
         public ActionResult MusteriEkle()

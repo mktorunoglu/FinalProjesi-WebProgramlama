@@ -6,17 +6,17 @@ using System.Web.Mvc;
 using LSYS.Models.Entity;
 namespace LSYS.Controllers
 {
-    public class UrunDetayController : Controller
+    public class MusteriSatisController : Controller
     {
-        // GET: UrunDetay
+        // GET: MusteriSatis
         LSYSEntities db = new LSYSEntities();
         public ActionResult Index(Nullable<int> id)
         {
-            var urn = from k in db.TBL_URUN
-                      where k.URUN_ID == id
+            var byi = from k in db.TBL_SATIS
+                      where k.MUSTERI_ID == id
                       select k;
 
-            return View(urn.ToList());
+            return View(byi.ToList());
         }
     }
 }
