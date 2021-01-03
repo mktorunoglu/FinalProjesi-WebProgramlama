@@ -1,0 +1,41 @@
+﻿@model LSYS.Models.Entity.TBL_BAKIM
+@{
+    ViewBag.Title = "BakimEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Bakim Ekle</h2>
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>BAYİ ID</label>
+        @Html.TextBoxFor(u => u.BAYI_ID, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>MÜŞTERİ ID</label>
+        @Html.TextBoxFor(u => u.MUSTERI_ID, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>URUN_ID</label>
+        @Html.TextBoxFor(u => u.URUN_ID, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>BAKIM İŞLEMİ</label>
+        @Html.TextBoxFor(u => u.BAKIM_ISLEMI, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>TARIH</label>
+        @Html.TextBoxFor(u => u.BAKIM_TARIHI, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>MALİYET</label>
+        @Html.TextBoxFor(u => u.MALIYET, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ekle</button>
+    </div>
+</form>

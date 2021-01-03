@@ -1,0 +1,47 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_SIPARIS>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<table class=" table table-bordered">
+    <tr>
+
+        <td>SİPARİŞ ID</td>
+        <td>URUN ID</td>
+        <td>ADET</td>
+        <td>ALIŞ FİYAT</td>
+        <td>TUTAR</td>
+        <td>TEMİN SÜRESİ</td>
+        <td>BAYİ ID</td>
+        <td>TARİH</td>
+        <td>ÖDEME</td>
+        @*<td>Güncelle</td>*@
+
+
+    </tr>
+
+
+    @foreach (var sts in Model)
+    {
+<tr>
+
+    <td>@sts.SIPARIS_ID</td>
+    <td>@sts.URUN_ID</td>
+    <td>@sts.URUN_ADET</td>
+    <td>@sts.ALIS_FIYAT</td>
+    <td>@sts.TUTAR</td>
+    <td>@sts.TEMIN_SURESI</td>
+    <td>@sts.BAYI_ID</td>
+    <td>@sts.TARIH</td>
+    <td><a href="/Odeme/Index/@sts.BAYI_ID" class="btn btn-success">Ödeme</a></td>
+
+    @*<td><a href="/Siparis/SiparisGetir/@sts.BAYI_ID" class="btn btn-success">Güncelle</a></td>*@
+
+</tr>
+    }
+
+</table>
+<a href="/Siparis/SiparisEkle/" class="btn btn-primary">Yeni Sipariş Ekle</a>

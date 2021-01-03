@@ -1,0 +1,41 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_ODEME>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<table class=" table table-bordered">
+    <tr>
+
+        <td>SİPARİŞ ID</td>
+        <td>ÖDEME YÖNTEMİ</td>
+        <td>BAYİ ADI</td>
+        <td>ÜRÜN ADI</td>
+        <td>TUTAR</td>
+        @*<td>Güncelle</td>*@
+
+
+    </tr>
+
+
+    @foreach (var sts in Model)
+    {
+<tr>
+
+    <td>@sts.SIPARIS_ID</td>
+    <td>@sts.ODEME_YONTEMI</td>
+    <td>@sts.TBL_BAYI.BAYI_ADI</td>
+    <td>@sts.TBL_SIPARIS.TBL_URUN.URUN_ADI</td>
+    <td>@sts.TBL_SIPARIS.TUTAR</td>
+
+    @*<td><a href="/Siparis/SiparisGetir/@sts.BAYI_ID" class="btn btn-success">Güncelle</a></td>*@
+
+</tr>
+    }
+
+</table>
+<a href="/Odeme/OdemeEkle/" class="btn btn-primary">Yeni Ödeme Yap</a>
+
+

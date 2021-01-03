@@ -1,0 +1,44 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_BAKIM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<h2>Bakımdaki Ürünler</h2>
+
+
+
+<table class=" table table-bordered">
+    <tr>
+
+        <td>BAYİ ID</td>
+        <td>MÜŞTERİ AD SOYAD</td>
+        <td>ÜRÜN ADI</td>
+        <td>BAKIM İŞLEMİ</td>
+        <td>BAKIM TARİHİ</td>
+        <td>MALİYET</td>
+
+
+    </tr>
+
+    @foreach (var bkm in Model)
+    {
+        <tr>
+
+            <td>@bkm.BAYI_ID</td>
+            <td>@bkm.TBL_MUSTERI.AD&nbsp @bkm.TBL_MUSTERI.SOYAD</td>
+            <td>@bkm.TBL_URUN.URUN_ADI</td>
+            <td>@bkm.BAKIM_ISLEMI</td>
+            <td>@bkm.BAKIM_TARIHI</td>
+            <td>@bkm.MALIYET</td>
+         
+
+        </tr>
+    }
+
+</table>
+<a href="/Bakim/BakimEkle/" class="btn btn-primary">Yeni Bakım İşlemi Ekle</a>

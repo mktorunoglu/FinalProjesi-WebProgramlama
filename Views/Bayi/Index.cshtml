@@ -15,9 +15,11 @@
         <th>ŞİFRE</th>
         <th>TELEFON</th>
         <th>ADRES</th>
-        <th>FIRMA ID</th>
+        
         <th>MAIL</th>
         <th>SATIŞLAR</th>
+        <th>Müşteriler</th>
+        <th>BAKIM</th>
         <th>Siparişler</th>
         <th>Sil</th>
         <th>Güncelle</th>
@@ -32,10 +34,13 @@
     <td>@b.SIFRE</td>
     <td>@b.TELEFON</td>
     <td>@b.ADRES</td>
-    <td>@b.FIRMA_ID</td>
+    
     <td>@b.MAIL</td>
-    <td><a href="/Satis/Index/@b.BAYI_ID" class="btn btn-info">Satışlar</a></td>
-    <td><a href="/Siparis/Index/@b.BAYI_ID" class="btn btn-success">Siparişler</a></td>
+
+    <td><a href="/Satis/Index/@b.BAYI_ID" class="btn btn" style="background-color:darkorange; color:white " >Satışlar</a></td>
+    <td><a href="/BayiMusteriler/Index/@b.BAYI_ID" class="btn btn" style="background-color:navy; color:white">Müşteriler</a></td>
+    <td><a href="/Bakim/Index/@b.BAYI_ID" class="btn btn-info">Bakım</a></td>
+    <td><a href="/Siparis/Index/@b.BAYI_ID" class="btn btn-success">Siparişler/Ödemeler</a></td>
     <td>
         @Html.ActionLink("Sil", "BayiSil", new { id = b.BAYI_ID },
    new

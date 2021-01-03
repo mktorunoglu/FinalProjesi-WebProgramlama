@@ -5,15 +5,9 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Müşteriler</h2>
 
-@using (Html.BeginForm("Index", "Musteri", FormMethod.Get))
-{
-    <div style="margin-bottom:15px; margin-top:15px;">
-        <b>Aranacak Müşteri Adını Girin: &nbsp</b> @Html.TextBox("p")
-        <input type="submit" value="Ara" />
-    </div>
-}
+
+<h2>Müşteriler</h2>
 
 <table class="table table-bordered">
     <tr>
@@ -27,7 +21,6 @@
         <th>KULLANICI ADI</th>
         <th>SIFRE</th>
         <th>DOGUM TARIHI</th>
-        <th>URUNLER</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
     </tr>
@@ -49,13 +42,12 @@
 
 
 
-            <td><a href="/MusteriSatis/Index/@mst.MUSTERI_ID" class="btn btn-primary">Ürünler</a></td>
+
             <td><a href="/Musteri/MusteriSil/@mst.MUSTERI_ID" class="btn btn-danger">Sil</a></td>
             <td><a href="/Musteri/MusteriGetir/@mst.MUSTERI_ID" class="btn btn-success">Güncelle</a></td>
 
         </tr>
     }
 </table>
-
 
 <a href="/Musteri/MusteriEkle/" class="btn btn-primary">Yeni Müşteri Ekle</a>
