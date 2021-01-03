@@ -2,4 +2,4 @@ Anasayfa: Rüveyda Sultan ANAÇOĞLU
 Bayi Arayüzü: Bedrettin Yusuf YURT
 Firma Arayüzü: Mehmet Kamil TORUNOĞLU
 Müşteri Arayüzü: Muhammet Ali KARAGÜZEL
-Yönetici Arayüzü: Umut Can KAYA
+Yönetici Arayüzü: Umutcan KAYA
