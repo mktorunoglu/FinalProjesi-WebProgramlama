@@ -1,0 +1,30 @@
+ANASAYFA
+
+SİPARİŞLERİM:
+Verilen siparişler listelenir;
+- Ürün Adı
+- Ürün Modeli
+- Ürün Ebatı
+- Ürün Adeti
+- Garanti Süresi
+- Satıs Fiyatı
+- Satıcı Adı
+- Siparis Durumu
+- Servis Bakım Durumu
+- Servis Bakım Islemi
+- Siparis Tarihi
+- Ödeme Yöntemi
+
+HESABIM:
+Bilgiler güncellebilir;
+- Müsteri Adı
+- Müsteri Soyadı
+- Kullanıcı Adı
+- Sifre
+- Dogum Tarihi
+- E-Posta Adresi
+- Ev ya da Is Adresi
+- Telefon Numarası
+
+Hesap silinebilir.
+

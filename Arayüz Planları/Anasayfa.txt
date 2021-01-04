@@ -1,0 +1,30 @@
+OTURUM GİRİŞİ:
+Müşteriler için sisteme üye olma seçeneği
+
+Oturum açıldığında rol uyarıları (Bayi Oturumu: Cumhuriyet Bayii)
+
+ÜRÜNLER:
+- Ürün Adı
+- Ürün Modeli
+- Ürün Ebatı
+- Stok Adeti
+- Ürün Fiyatı
+- Satıcı Adı (Müşteri oturumu için bayi adları)
+- Garanti Süresi
+
+Oturum açıldığında ürün satın alma işlevi; ürün satışı için oturum açılmalı,
+oturum açılmadan da ürünler incelenebilir.
+
+BAYİLERİMİZ:
+Firmanın bayi listesi;
+- Bayi Adı
+- E-Posta Adresi
+- Is Adresi
+- Telefon Numarası
+
+HAKKIMIZDA:
+Firma hakkında bilgiler
+
+İLETİŞİM:
+Firmanın iletişim adresleri
+

@@ -1,0 +1,109 @@
+﻿@using LSYSweb.Models.Entity
+@model List<TBL_URUN>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>AKIN LİFT | Firma Oturumu</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .form-group {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 30px;
+        }
+
+        .bg { 
+            background-image: url("https://i.hizliresim.com/aLBSKv.jpg");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .custom {
+            width: 230px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row bg">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <img src="https://i.hizliresim.com/qCzzRR.png" class="img-responsive col-lg-12 col-md-12 col-sm-12">
+            </div>
+
+            <div class="col-lg-10 col-md-10 col-sm-10">
+                <div class="mh-100" style="width: 1000px; height: 200px;"></div>
+
+                <nav class="navbar navbar-default" style="background-color: #ffffff; opacity: .9;">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">AKIN LİFT | Firma Oturumu</a>
+                        </div>
+
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Anasayfa</a></li>
+                            <li class="active"><a href="#">Ürünler</a></li>
+                            <li>@Html.ActionLink("Siparişler", "Siparisler", "Firma")</li>
+                            <li>@Html.ActionLink("Stok", "Stok", "Firma")</li>
+                            <li>@Html.ActionLink("Reçete", "Recete", "Firma")</li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            @foreach (var urn in Model)
+            {
+                <div class="col-lg-2 col-md-3 col-sm-4 form-group">
+                    <img src="@urn.RESIM" class="img-responsive img1 col-lg-12 col-md-12 col-sm-12 form-group">
+                    <h4 class="text-center"><b>@urn.URUN_ADI</b></h4>
+                    <table class="table table-condensed table-hover">
+                        <tbody>
+                            <tr>
+                                <td>Model</td>
+                                <td><b>@urn.URUN_MODEL</b></td>
+                            </tr>
+                            <tr>
+                                <td>Ebat</td>
+                                <td><b>@urn.URUN_EBAT</b></td>
+                            </tr>
+                            <tr>
+                                <td>Garanti Süresi (Ay)</td>
+                                <td><b>@urn.P_BAKIM_SURESI</b></td>
+                            </tr>
+                            <tr>
+                                <td>Stok Adeti</td>
+                                <td><b>@urn.STOK_ADEDI</b></td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td> </td>
+                            </tr>
+                            <tr>
+                                <td>Fiyat</td>
+                                <td><b>@urn.SATIS_FIYAT&#8378;</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+        <div class="mh-100" style="height: 20px;"></div><hr>
+        <p style="text-align: center;">© 2020 Akın Lift. Tüm Hakları Saklıdır. Akın Lift, akinlift.com ve Akın Lift logosu, Akın Lift'in Türkiye'deki ticari markalarıdır.</p>
+    </div>
+</body>
+</html>
