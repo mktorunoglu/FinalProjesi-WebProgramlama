@@ -1,0 +1,23 @@
+﻿@model LSYS.Models.Entity.TBL_SIPARIS
+@{
+    ViewBag.Title = "SiparisGetirP";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+
+@using (Html.BeginForm("SiparisGuncelleP", "TumSiparisler", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(h => h.URUN_ID)
+        @Html.TextBoxFor(h => h.URUN_ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.URUN_ADET)
+        @Html.TextBoxFor(h => h.URUN_ADET, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.TARIH)
+        @Html.TextBoxFor(h => h.TARIH, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}

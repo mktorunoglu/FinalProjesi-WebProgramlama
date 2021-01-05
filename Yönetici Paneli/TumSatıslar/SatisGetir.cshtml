@@ -1,0 +1,30 @@
+﻿@model LSYS.Models.Entity.TBL_SATIS
+@{
+    ViewBag.Title = "SatisGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("SatisGuncelle", "TumSatıslar", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(h => h.SATIS_ID)
+        @Html.TextBoxFor(h => h.SATIS_ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.MUSTERI_ID)
+        @Html.TextBoxFor(h => h.MUSTERI_ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.URUN_ID)
+        @Html.TextBoxFor(h => h.URUN_ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.ADET)
+        @Html.TextBoxFor(h => h.ADET, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(h => h.SATIS_TARIH)
+        @Html.TextBoxFor(h => h.SATIS_TARIH, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

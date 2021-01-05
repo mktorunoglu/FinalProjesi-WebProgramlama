@@ -1,0 +1,66 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_URUN>
+@{
+    ViewBag.Title = "IndexP";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+<h2>Ürün Sayfası</h2>
+
+
+@using (Html.BeginForm("Index", "Urun", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b>Aranacak Urun Adını Girin: &nbsp</b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+<table class=" table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>ADI</td>
+
+        <td>STOK ADEDİ</td>
+
+        <td>STOK EŞİK DEĞERİ</td>
+
+        <td>REÇETE</td>
+        <td>DETAY</td>
+        <td>SİL</td>
+        <td>GÜNCELLE</td>
+
+    </tr>
+
+    @foreach (var urn in Model)
+    {
+        <tr>
+            <td>@urn.URUN_ID</td>
+            <td>@urn.URUN_ADI</td>
+            <td>@urn.STOK_ADEDI</td>
+
+            <td>@urn.STOK_ESIK_DEGERI</td>
+
+
+            <td><a href="/kHammaddeler/IndexP/@urn.URUN_ID" class="btn btn-info">Reçete</a></td>
+            <td><a href="/UrunDetay/IndexP/@urn.URUN_ID" class="btn btn-info">Detay</a></td>
+
+            <td>
+                @Html.ActionLink("Sil", "UrunSil", new { id = urn.URUN_ID },
+           new
+                    {
+                        @class = "btn btn-danger",
+               onclick = "return confirm('Silmek İstiyor musunuz?')"
+                    })
+            </td>
+
+            <td><a href="/Urun/UrunGetirP/@urn.URUN_ID" class="btn btn-success">Güncelle</a></td>
+
+
+
+        </tr>
+    }
+
+</table>
+
+<a href="/Urun/UrunEkleP/" class="btn btn-primary">Yeni Urun Ekle</a>

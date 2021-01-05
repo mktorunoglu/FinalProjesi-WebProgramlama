@@ -1,0 +1,61 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_MUSTERI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Müşteriler</h2>
+
+@using (Html.BeginForm("Index", "Musteri", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b>Aranacak Müşteri Adını Girin: &nbsp</b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Müşteri ID</th>
+        <th>ADI</th>
+        <th>SOYADI</th>
+        <th>TELEFON</th>
+        <th>ADRES</th>
+        <th>BAYİ ID</th>
+        <th>MAIL</th>
+        <th>KULLANICI ADI</th>
+        <th>SIFRE</th>
+        <th>DOGUM TARIHI</th>
+        <th>URUNLER</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+
+    @foreach (var mst in Model)
+    {
+        <tr>
+            <td>@mst.MUSTERI_ID</td>
+            <td>@mst.AD</td>
+            <td>@mst.SOYAD</td>
+            <td>@mst.TELEFON</td>
+            <td>@mst.ADRES</td>
+            <td>@mst.BAYI_ID</td>
+            <td>@mst.MAIL</td>
+            <td>@mst.KULLANICI_ADI</td>
+            <td>@mst.SIFRE</td>
+            <td>@mst.DOGUM_TARIHI</td>
+
+
+
+
+            <td><a href="/MusteriSatis/Index/@mst.MUSTERI_ID" class="btn btn-primary">Ürünler</a></td>
+            <td><a href="/Musteri/MusteriSil/@mst.MUSTERI_ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Musteri/MusteriGetir/@mst.MUSTERI_ID" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+
+
+<a href="/Musteri/MusteriEkle/" class="btn btn-primary">Yeni Müşteri Ekle</a>

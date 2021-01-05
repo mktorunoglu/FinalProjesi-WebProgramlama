@@ -1,0 +1,52 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_SATIS>
+@{
+    ViewBag.Title = "IndexP";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+
+<h2>Tüm Satışlar</h2>
+
+
+
+<table class=" table table-bordered">
+    <tr>
+
+        <td>BAYİ ID</td>
+        <td>MÜŞTERİ ID</td>
+        <td>ÜRÜN ID</td>
+        <td>SATIŞ FİYAT</td>
+        <td>ADET</td>
+        <td>BİRİM KAR</td>
+        <td>TOPLAM KAR</td>
+        <td>MALİYET</td>
+        <td>TARİH</td>
+        @*<td>Güncelle</td>*@
+
+
+    </tr>
+
+
+    @foreach (var sts in Model)
+    {
+        <tr>
+
+            <td>@sts.BAYI_ID</td>
+            <td>@sts.TBL_MUSTERI.AD&nbsp @sts.TBL_MUSTERI.SOYAD</td>
+            <td>@sts.TBL_URUN.URUN_ADI</td>
+            <td>@sts.SATIS_FIYAT</td>
+            <td>@sts.ADET</td>
+            <td>@sts.BIRIM_KAR</td>
+            <td>@sts.TOPLAM_KAR</td>
+            <td>@sts.MALIYET</td>
+            <td>@sts.SATIS_TARIH</td>
+
+            @*<td><a href="/TumSatıslar/SatisGetir/@sts.BAYI_ID" class="btn btn-success">Güncelle</a></td>*@
+
+        </tr>
+    }
+
+</table>
+@*<a href="/Satis/SatisEkle/" class="btn btn-primary">Yeni Satış İşlemi Ekle</a>*@
+
