@@ -15,6 +15,11 @@ namespace LSYS.Controllers
             var degerler = db.TBL_SATIS.ToList();
             return View(degerler);
         }
+        public ActionResult IndexP()
+        {
+            var degerler = db.TBL_SATIS.ToList();
+            return View(degerler);
+        }
 
         public ActionResult SatisGetir(int id)
         {

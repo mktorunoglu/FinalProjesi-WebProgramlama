@@ -18,5 +18,13 @@ namespace LSYS.Controllers
 
             return View(byi.ToList());
         }
+        public ActionResult IndexP(Nullable<int> id)
+        {
+            var byi = from k in db.TBL_SATIS
+                      where k.MUSTERI_ID == id
+                      select k;
+
+            return View(byi.ToList());
+        }
     }
 }

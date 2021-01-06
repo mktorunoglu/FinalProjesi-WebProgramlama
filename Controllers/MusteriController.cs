@@ -20,6 +20,16 @@ namespace LSYS.Controllers
            
             return View(musteriler.ToList());
         }
+        public ActionResult IndexP(string p)
+        {
+            var musteriler = from u in db.TBL_MUSTERI select u;
+            if (!string.IsNullOrEmpty(p))
+            {
+                musteriler = musteriler.Where(m => m.AD.Contains(p));
+            }
+
+            return View(musteriler.ToList());
+        }
         [HttpGet]
         public ActionResult MusteriEkle()
         {

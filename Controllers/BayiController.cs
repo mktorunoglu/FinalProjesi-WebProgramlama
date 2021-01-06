@@ -16,6 +16,11 @@ namespace LSYS.Controllers
             var degerler = db.TBL_BAYI.ToList();
             return View(degerler);
         }
+        public ActionResult IndexP()
+        {
+            var degerler = db.TBL_BAYI.ToList();
+            return View(degerler);
+        }
         [HttpGet]
         public ActionResult BayiEkle()
         {
@@ -45,6 +50,38 @@ namespace LSYS.Controllers
         }
 
         public ActionResult BayiGuncelle(TBL_BAYI p)
+        {
+            var byi = db.TBL_BAYI.Find(p.BAYI_ID);
+            byi.BAYI_ID = p.BAYI_ID;
+            byi.BAYI_ADI = p.BAYI_ADI;
+            byi.KULLANICI_ADI = p.KULLANICI_ADI;
+            byi.SIFRE = p.SIFRE;
+            byi.TELEFON = p.TELEFON;
+            byi.ADRES = p.ADRES;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+         [HttpGet]
+        public ActionResult BayiEkleP()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult BayiEkleP(TBL_BAYI p)
+        {
+            db.TBL_BAYI.Add(p);
+            db.SaveChanges();
+
+            return View();
+        }
+        public ActionResult BayiGetirP(int id)
+        {
+            var byi = db.TBL_BAYI.Find(id);
+            return View("BayiGetirP", byi);
+        }
+
+        public ActionResult BayiGuncelleP(TBL_BAYI p)
         {
             var byi = db.TBL_BAYI.Find(p.BAYI_ID);
             byi.BAYI_ID = p.BAYI_ID;

@@ -22,6 +22,17 @@ namespace LSYS.Controllers
             return View(urunler.ToList());
         }
 
+        public ActionResult IndexP(string p)
+        {
+            var urunler = from u in db.TBL_URUN select u;
+            if (!string.IsNullOrEmpty(p))
+            {
+                urunler = urunler.Where(m => m.URUN_ADI.Contains(p));
+            }
+            // var urunler = db.TBLKITAP.ToList();
+            return View(urunler.ToList());
+        }
+
         [HttpGet]
         public ActionResult UrunEkle()
         {
@@ -31,6 +42,21 @@ namespace LSYS.Controllers
         }
         [HttpPost]
         public ActionResult UrunEkle(TBL_URUN p)
+        {
+            db.TBL_URUN.Add(p);
+            db.SaveChanges();
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult UrunEkleP()
+        {
+
+            return View();
+
+        }
+        [HttpPost]
+        public ActionResult UrunEkleP(TBL_URUN p)
         {
             db.TBL_URUN.Add(p);
             db.SaveChanges();
@@ -62,6 +88,30 @@ namespace LSYS.Controllers
             urun.SATIS_FIYAT = p.SATIS_FIYAT;
             urun.STOK_ADEDI = p.STOK_ADEDI;
             urun.TEMIN_SURESI = p.TEMIN_SURESI; 
+            urun.STOK_ESIK_DEGERI = p.STOK_ESIK_DEGERI;
+            urun.KAR = p.KAR;
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult UrunGetirP(int id)
+        {
+            var urun = db.TBL_URUN.Find(id);
+            return View("UrunGetirP", urun);
+        }
+
+        public ActionResult UrunGuncelleP(TBL_URUN p)
+        {
+            var urun = db.TBL_URUN.Find(p.URUN_ID);
+            urun.URUN_ID = p.URUN_ID;
+            urun.URUN_ADI = p.URUN_ADI;
+            urun.URUN_MODEL = p.URUN_MODEL;
+            urun.P_BAKIM_SURESI = p.P_BAKIM_SURESI;
+            urun.ALIS_FIYAT = p.ALIS_FIYAT;
+            urun.SATIS_FIYAT = p.SATIS_FIYAT;
+            urun.STOK_ADEDI = p.STOK_ADEDI;
+            urun.TEMIN_SURESI = p.TEMIN_SURESI;
             urun.STOK_ESIK_DEGERI = p.STOK_ESIK_DEGERI;
             urun.KAR = p.KAR;
             db.SaveChanges();

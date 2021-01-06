@@ -18,5 +18,13 @@ namespace LSYS.Controllers
 
             return View(urn.ToList());
         }
+        public ActionResult IndexP(Nullable<int> id)
+        {
+            var urn = from k in db.TBL_URUN
+                      where k.URUN_ID == id
+                      select k;
+
+            return View(urn.ToList());
+        }
     }
 }

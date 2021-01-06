@@ -20,6 +20,15 @@ namespace LSYS.Controllers
 
             return View(khmd.ToList());
         }
+        public ActionResult IndexP(Nullable<int> id)
+        {
+
+            var khmd = from k in db.TBL_K_HAMMADELER
+                       where k.URUN_ID == id
+                       select k;
+
+            return View(khmd.ToList());
+        }
 
 
 

@@ -31,5 +31,18 @@ namespace LSYS.Controllers
 
             return View();
         }
+        [HttpGet]
+        public ActionResult OdemeEkleP()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult OdemeEkleP(TBL_ODEME p)
+        {
+            db.TBL_ODEME.Add(p);
+            db.SaveChanges();
+
+            return View();
+        }
     }
 }
