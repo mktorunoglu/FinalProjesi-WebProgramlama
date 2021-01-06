@@ -1,0 +1,26 @@
+﻿@model LSYS.Models.Entity.TBL_ODEME
+@{
+    ViewBag.Title = "OdemeEkleP";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>BAYİ ID</label>
+        @Html.TextBoxFor(u => u.BAYI_ID, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>SIPARIS ID</label>
+        @Html.TextBoxFor(u => u.SIPARIS_ID, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>ODEME_YONTEMI</label>
+        @Html.TextBoxFor(u => u.ODEME_YONTEMI, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ödeme Yap</button>
+    </div>
+</form>
+

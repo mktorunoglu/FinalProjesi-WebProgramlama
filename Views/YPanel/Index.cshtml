@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+<h2>Yönetici INDEX</h2>
+
+<table class="table table-hover">
+    <tr>
+        <td>
+            Yönetici ID: @TempData["ID"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+           Kullanıcı Adı: @HttpContext.Current.User.Identity.Name
+        </td>
+    </tr>
+    <tr>
+        <td>
+           Ad: @TempData["Ad"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Soyad: @TempData["Soyad"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Şifre: @TempData["Sifre"].ToString()
+        </td>
+    </tr>
+
+
+</table>

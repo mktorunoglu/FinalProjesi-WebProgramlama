@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMusteri.cshtml";
+}
+<h2>Müşteri Bilgileri</h2>
+   <table class="table table-hover">
+    <tr>
+        <td>
+            Müşteri ID: @TempData["ID"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Kullanıcı Adı: @HttpContext.Current.User.Identity.Name
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Ad: @TempData["Ad"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Soyad: @TempData["Soyad"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Şifre: @TempData["Sifre"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Telefon: @TempData["Telefon"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Adres: @TempData["Adres"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Bayi Adı: @TempData["BayiAdi"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mail: @TempData["Mail"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Dogum Tarihi: @TempData["DogumTarihi"].ToString()
+        </td>
+    </tr>
+
+
+</table>

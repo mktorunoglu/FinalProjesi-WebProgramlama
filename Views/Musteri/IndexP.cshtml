@@ -1,0 +1,55 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_MUSTERI>
+@{
+    ViewBag.Title = "IndexP";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+<h2>IndexP</h2>
+
+
+<h2>Müşteriler</h2>
+
+@using (Html.BeginForm("Index", "Musteri", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b>Aranacak Müşteri Adını Girin: &nbsp</b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Müşteri ID</th>
+        <th>ADI</th>
+        <th>SOYADI</th>
+        <th>TELEFON</th>
+        <th>ADRES</th>
+        <th>BAYİ ID</th>
+        <th>MAIL</th>
+        <th>KULLANICI ADI</th>
+        <th>SIFRE</th>
+        <th>DOGUM TARIHI</th>
+        <th>URUNLER</th>
+
+    </tr>
+
+    @foreach (var mst in Model)
+    {
+        <tr>
+            <td>@mst.MUSTERI_ID</td>
+            <td>@mst.AD</td>
+            <td>@mst.SOYAD</td>
+            <td>@mst.TELEFON</td>
+            <td>@mst.ADRES</td>
+            <td>@mst.BAYI_ID</td>
+            <td>@mst.MAIL</td>
+            <td>@mst.KULLANICI_ADI</td>
+            <td>@mst.SIFRE</td>
+            <td>@mst.DOGUM_TARIHI</td>
+
+        </tr>
+    }
+</table>
+
+

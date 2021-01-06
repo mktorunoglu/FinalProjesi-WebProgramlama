@@ -1,0 +1,57 @@
+﻿@using LSYS.Models.Entity
+@model List<TBL_BAYI>
+@{
+    ViewBag.Title = "IndexP";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+<h2>Bayiler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>BAYİ ID</th>
+        <th>BAYİ ADI</th>
+        <th>KULLANICI ADI</th>
+        <th>ŞİFRE</th>
+        <th>TELEFON</th>
+        <th>ADRES</th>
+
+        <th>MAIL</th>
+        @*<th>SATIŞLAR</th>
+        <th>Müşteriler</th>
+        <th>BAKIM</th>
+        <th>Siparişler</th>*@
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td>@b.BAYI_ID</td>
+            <td>@b.BAYI_ADI</td>
+            <td>@b.KULLANICI_ADI</td>
+            <td>@b.SIFRE</td>
+            <td>@b.TELEFON</td>
+            <td>@b.ADRES</td>
+
+            <td>@b.MAIL</td>
+
+            @*<td><a href="/Satis/Index/@b.BAYI_ID" class="btn btn" style="background-color:darkorange; color:white ">Satışlar</a></td>
+            <td><a href="/BayiMusteriler/Index/@b.BAYI_ID" class="btn btn" style="background-color:navy; color:white">Müşteriler</a></td>
+            <td><a href="/Bakim/Index/@b.BAYI_ID" class="btn btn-info">Bakım</a></td>
+            <td><a href="/Siparis/Index/@b.BAYI_ID" class="btn btn-success">Siparişler/Ödemeler</a></td>*@
+            <td>
+                @Html.ActionLink("Sil", "BayiSil", new { id = b.BAYI_ID },
+           new
+                    {
+                        @class = "btn btn-danger",
+               onclick = "return confirm('Silmek İstiyor musunuz?')"
+                    })
+            </td>
+            <td><a href="/Bayi/BayiGetirP/@b.BAYI_ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Bayi/BayiEkleP/" class="btn btn-primary">Yeni Bayi Ekle</a>
+

@@ -1,0 +1,36 @@
+﻿@model LSYS.Models.Entity.TBL_SIPARIS
+@{
+    ViewBag.Title = "SiparisEkleP";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+<h2>SiparisEkleP</h2>
+
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>URUN_ID</label>
+        @Html.TextBoxFor(u => u.URUN_ID, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>URUN_ADET</label>
+        @Html.TextBoxFor(u => u.URUN_ADET, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>BAYI_ID</label>
+        @Html.TextBoxFor(u => u.BAYI_ID, new { @class = "form-control" })
+    </div>
+
+
+    <div style="margin-top:15px">
+        <label>TARIH</label>
+        @Html.TextBoxFor(u => u.TARIH, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Sipariş Ver</button>
+    </div>
+</form>
+
+
