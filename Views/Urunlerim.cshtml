@@ -1,0 +1,54 @@
+﻿@model List<WebLabProjeOdevi.TBL_SATIS>
+@{
+    ViewBag.Title = "Urunlerim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*Burada da bootstrap tan faydalanıldı.*@ @*Gelen veri list tipinde olduğu için foreach yardımıyla listenin içeriği ekrana basılır*@
+<div class="panel panel-primary" style="margin-top: 20px">
+    <div class="panel-heading"><h4>Ürünlerim</h4></div>
+    <div class="panel-body">
+        <table class="table table-bordered table-hover table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th>BAYİ ID</th>
+                    <th>ÜRÜN ADI</th> 
+                    <th>ÜRÜN RESİM</th>
+                    <th>ÜRÜN MODEL</th>
+                    <th>ÜRÜN EBAT</th>
+                    <th>BAKIM SÜRESİ</th>
+                    <th>SATIŞ FİYAT</th>
+                    <th>ADET</th>
+                    <th>MALİYET</th>
+                    <th>TARİH</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+
+                    <td>@item.BAYI_ID</td>
+                    <td>@item.TBL_URUN.URUN_ADI</td>
+                    <td><a href="@item.TBL_URUN.RESIM" target="_blank"><img src="@item.TBL_URUN.RESIM" style="width:25px;height:25px" /></a></td>
+                    <td>@item.TBL_URUN.URUN_MODEL</td>
+                    <td>@item.TBL_URUN.URUN_EBAT</td>
+                    <td>@item.TBL_URUN.P_BAKIM_SURESI</td>
+                    <td>@item.SATIS_FIYAT</td>
+                    <td>@item.ADET</td>
+                    <td>@item.MALIYET</td>
+                    <td></td>
+
+                </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+
+
+

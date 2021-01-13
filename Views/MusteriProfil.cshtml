@@ -1,0 +1,75 @@
+﻿@model WebLabProjeOdevi.TBL_MUSTERI
+@{
+    ViewBag.Title = "MusteriProfil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*Burada arayüz için Bootstrap kütüphanesinden faydalanılmıştır. Hizalamak için bootstrap ızgara sistemi kullanılmıştır.*@
+
+<div class="panel panel-primary" style="margin-top: 20px">
+    <div class="panel-heading"><h4>Profil Bilgileri</h4></div>
+    <div class="panel-body">
+        <form action="MusteriProfil" method="post"> @*Bu bilgiler "/Home/MusteriProfil" action ına gidecek,gidilecek olan action ın type ı POST*@
+            @Html.HiddenFor(m => m.MUSTERI_ID)
+            <div class="row"> @*Bootstrap ızgara sistemi*@
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m=>m.AD,"Ad")
+                        @Html.TextBoxFor(m => m.AD, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.SOYAD,"Soyad")
+                        @Html.TextBoxFor(m => m.SOYAD, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.TELEFON,"Telefon")
+                        @Html.TextBoxFor(m => m.TELEFON, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.MAIL,"Mail")
+                        @Html.TextBoxFor(m => m.MAIL, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.KULLANICI_ADI,"Kullanıcı Adı")
+                        @Html.TextBoxFor(m => m.KULLANICI_ADI, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.SIFRE,"Şifre")
+                        @Html.TextBoxFor(m => m.SIFRE, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.DOGUM_TARIHI,"Doğum Tarihi")
+                        @Html.TextBoxFor(m => m.DOGUM_TARIHI, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ADRES,"Adres")
+                        @Html.TextBoxFor(m => m.ADRES, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success">Güncelle</button> @*Kaydetme işlemini başlatan buton*@
+                </div>
+                
+            </div>
+
+        </form>
+    </div>
+</div>
+
+        
