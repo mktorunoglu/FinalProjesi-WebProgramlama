@@ -122,6 +122,9 @@
     <NavigationProperty Name="TBL_FIRMA" Relationship="Self.FK__TBL_SIPAR__FIRMA__36B12243" FromRole="TBL_SIPARIS" ToRole="TBL_FIRMA" />
     <NavigationProperty Name="TBL_ODEME" Relationship="Self.FK__TBL_ODEME__SIPAR__3A81B327" FromRole="TBL_SIPARIS" ToRole="TBL_ODEME" />
     <NavigationProperty Name="TBL_URUN" Relationship="Self.FK__TBL_SIPAR__URUN___37A5467C" FromRole="TBL_SIPARIS" ToRole="TBL_URUN" />
+    <Property Name="BAYI_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="URUN_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FIYAT" Type="Int32" />
   </EntityType>
   <EntityType Name="TBL_URUN">
     <Key>

@@ -12,13 +12,10 @@ namespace LSYSweb.Controllers
         // GET: kHammaddeler
         LSYSEntities db = new LSYSEntities();
 
-        public ActionResult Index(Nullable<int> id)
+        public ActionResult Index()
         {
-            var khmd = from k in db.TBL_K_HAMMADELER
-                       where k.URUN_ID == id
-                       select k;
-
-            return View(khmd.ToList());
+            var degerler = db.TBL_K_HAMMADELER.ToList();
+            return View(degerler);
         }
     }
 }

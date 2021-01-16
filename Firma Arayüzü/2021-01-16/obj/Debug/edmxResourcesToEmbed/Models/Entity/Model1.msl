@@ -92,6 +92,9 @@
     <EntitySetMapping Name="TBL_SIPARIS">
       <EntityTypeMapping TypeName="LSYSModel.TBL_SIPARIS">
         <MappingFragment StoreEntitySet="TBL_SIPARIS">
+          <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
+          <ScalarProperty Name="URUN_ADI" ColumnName="URUN_ADI" />
+          <ScalarProperty Name="BAYI_ADI" ColumnName="BAYI_ADI" />
           <ScalarProperty Name="SIPARIS_ID" ColumnName="SIPARIS_ID" />
           <ScalarProperty Name="URUN_ID" ColumnName="URUN_ID" />
           <ScalarProperty Name="BAYI_ID" ColumnName="BAYI_ID" />

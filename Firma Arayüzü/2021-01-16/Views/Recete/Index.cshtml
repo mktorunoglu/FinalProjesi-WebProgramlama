@@ -13,6 +13,8 @@
         td {
             padding-left: 20px;
             padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             text-align: center;
         }
 
@@ -24,26 +26,15 @@
 
 <body>
     <h2>Reçete</h2>
-    <table class="table table-bordered">
-        <tr>
-            @*<td>ID</td>*@
-            @*<td>hammadde id</td>
-            <td>urun adı</td>*@
-            <td>HAMMADDE ADI</td>
-        </tr>
-
+    <table class="table-bordered">
         @foreach (var khmd in Model)
         {
             <tr>
-                @*<td>@khmd.K_HAMMADELER_ID</td>*@
-                @*<td>@khmd.HAMMADDE_ID</td>
-                <td>@khmd.TBL_URUN.URUN_ADI</td>*@
                 <td>@khmd.HAMMADDE_ADI</td>
-
             </tr>
         }
     </table>
-    <div class="mh-100" style="height: 100px;"></div><hr>
+    <div class="mh-100" style="height: 555px;"></div><hr>
     <p style="text-align: center;">© 2020 Akın Lift. Tüm Hakları Saklıdır. Akın Lift, akinlift.com ve Akın Lift logosu, Akın Lift'in Türkiye'deki ticari markalarıdır.</p>
 </body>
 </html>

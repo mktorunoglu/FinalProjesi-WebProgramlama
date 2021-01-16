@@ -121,6 +121,9 @@ warning 6002: The table/view 'LSYS.dbo.TBL_SATIS' does not have a primary key de
     <Property Name="TUTAR" Type="int" StoreGeneratedPattern="Computed" />
     <Property Name="TEMIN_SURESI" Type="int" />
     <Property Name="FIRMA_ID" Type="int" />
+    <Property Name="BAYI_ADI" Type="nvarchar" MaxLength="50" />
+    <Property Name="URUN_ADI" Type="nvarchar" MaxLength="50" />
+    <Property Name="FIYAT" Type="int" />
   </EntityType>
   <EntityType Name="TBL_URUN">
     <Key>

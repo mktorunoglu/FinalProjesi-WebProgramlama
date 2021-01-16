@@ -126,6 +126,9 @@ warning 6002: The table/view 'LSYS.dbo.TBL_SATIS' does not have a primary key de
           <Property Name="TUTAR" Type="int" StoreGeneratedPattern="Computed" />
           <Property Name="TEMIN_SURESI" Type="int" />
           <Property Name="FIRMA_ID" Type="int" />
+          <Property Name="BAYI_ADI" Type="nvarchar" MaxLength="50" />
+          <Property Name="URUN_ADI" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIYAT" Type="int" />
         </EntityType>
         <EntityType Name="TBL_URUN">
           <Key>
@@ -634,6 +637,9 @@ warning 6002: The table/view 'LSYS.dbo.TBL_SATIS' does not have a primary key de
           <NavigationProperty Name="TBL_FIRMA" Relationship="Self.FK__TBL_SIPAR__FIRMA__36B12243" FromRole="TBL_SIPARIS" ToRole="TBL_FIRMA" />
           <NavigationProperty Name="TBL_ODEME" Relationship="Self.FK__TBL_ODEME__SIPAR__3A81B327" FromRole="TBL_SIPARIS" ToRole="TBL_ODEME" />
           <NavigationProperty Name="TBL_URUN" Relationship="Self.FK__TBL_SIPAR__URUN___37A5467C" FromRole="TBL_SIPARIS" ToRole="TBL_URUN" />
+          <Property Name="BAYI_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="URUN_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIYAT" Type="Int32" />
         </EntityType>
         <EntityType Name="TBL_URUN">
           <Key>
@@ -1129,6 +1135,9 @@ warning 6002: The table/view 'LSYS.dbo.TBL_SATIS' does not have a primary key de
           <EntitySetMapping Name="TBL_SIPARIS">
             <EntityTypeMapping TypeName="LSYSModel.TBL_SIPARIS">
               <MappingFragment StoreEntitySet="TBL_SIPARIS">
+                <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
+                <ScalarProperty Name="URUN_ADI" ColumnName="URUN_ADI" />
+                <ScalarProperty Name="BAYI_ADI" ColumnName="BAYI_ADI" />
                 <ScalarProperty Name="SIPARIS_ID" ColumnName="SIPARIS_ID" />
                 <ScalarProperty Name="URUN_ID" ColumnName="URUN_ID" />
                 <ScalarProperty Name="BAYI_ID" ColumnName="BAYI_ID" />

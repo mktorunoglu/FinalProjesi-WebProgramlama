@@ -29,6 +29,9 @@ namespace LSYSweb.Models.Entity
         public Nullable<int> TUTAR { get; set; }
         public Nullable<int> TEMIN_SURESI { get; set; }
         public Nullable<int> FIRMA_ID { get; set; }
+        public string BAYI_ADI { get; set; }
+        public string URUN_ADI { get; set; }
+        public Nullable<int> FIYAT { get; set; }
     
         public virtual TBL_BAYI TBL_BAYI { get; set; }
         public virtual TBL_FIRMA TBL_FIRMA { get; set; }
