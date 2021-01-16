@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LSYSModelStoreContainer" CdmEntityContainer="LSYSEntities">
+    <EntitySetMapping Name="TBL_BAKIM">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_BAKIM">
+        <MappingFragment StoreEntitySet="TBL_BAKIM">
+          <ScalarProperty Name="BAKIM_ID" ColumnName="BAKIM_ID" />
+          <ScalarProperty Name="MUSTERI_ID" ColumnName="MUSTERI_ID" />
+          <ScalarProperty Name="URUN_ID" ColumnName="URUN_ID" />
+          <ScalarProperty Name="BAKIM_ISLEMI" ColumnName="BAKIM_ISLEMI" />
+          <ScalarProperty Name="BAKIM_TARIHI" ColumnName="BAKIM_TARIHI" />
+          <ScalarProperty Name="BAYI_ID" ColumnName="BAYI_ID" />
+          <ScalarProperty Name="MALIYET" ColumnName="MALIYET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_BAYI">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_BAYI">
+        <MappingFragment StoreEntitySet="TBL_BAYI">
+          <ScalarProperty Name="BAYI_ID" ColumnName="BAYI_ID" />
+          <ScalarProperty Name="BAYI_ADI" ColumnName="BAYI_ADI" />
+          <ScalarProperty Name="KULLANICI_ADI" ColumnName="KULLANICI_ADI" />
+          <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+          <ScalarProperty Name="FIRMA_ID" ColumnName="FIRMA_ID" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_FIRMA">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_FIRMA">
+        <MappingFragment StoreEntitySet="TBL_FIRMA">
+          <ScalarProperty Name="FIRMA_ID" ColumnName="FIRMA_ID" />
+          <ScalarProperty Name="KULLANICI_ADI" ColumnName="KULLANICI_ADI" />
+          <ScalarProperty Name="FIRMA_ADI" ColumnName="FIRMA_ADI" />
+          <ScalarProperty Name="YONETICI_ID" ColumnName="YONETICI_ID" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HAMMADDE">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_HAMMADDE">
+        <MappingFragment StoreEntitySet="TBL_HAMMADDE">
+          <ScalarProperty Name="HAMMADDE_ID" ColumnName="HAMMADDE_ID" />
+          <ScalarProperty Name="HAMMADDE_ADI" ColumnName="HAMMADDE_ADI" />
+          <ScalarProperty Name="STOK_ADEDI" ColumnName="STOK_ADEDI" />
+          <ScalarProperty Name="STOK_ESIK_DEGERI" ColumnName="STOK_ESIK_DEGERI" />
+          <ScalarProperty Name="TEMIN_SURESI" ColumnName="TEMIN_SURESI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_K_HAMMADELER">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_K_HAMMADELER">
+        <MappingFragment StoreEntitySet="TBL_K_HAMMADELER">
+          <ScalarProperty Name="K_HAMMADELER_ID" ColumnName="K_HAMMADELER_ID" />
+          <ScalarProperty Name="HAMMADDE_ID" ColumnName="HAMMADDE_ID" />
+          <ScalarProperty Name="HAMMADDE_ADI" ColumnName="HAMMADDE_ADI" />
+          <ScalarProperty Name="URUN_ID" ColumnName="URUN_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MUSTERI">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_MUSTERI">
+        <MappingFragment StoreEntitySet="TBL_MUSTERI">
+          <ScalarProperty Name="MUSTERI_ID" ColumnName="MUSTERI_ID" />
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="BAYI_ID" ColumnName="BAYI_ID" />
+          <ScalarProperty Name="KULLANICI_ADI" ColumnName="KULLANICI_ADI" />
+          <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+          <ScalarProperty Name="DOGUM_TARIHI" ColumnName="DOGUM_TARIHI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ODEME">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_ODEME">
+        <MappingFragment StoreEntitySet="TBL_ODEME">
+          <ScalarProperty Name="ODEME_ID" ColumnName="ODEME_ID" />
+          <ScalarProperty Name="ODEME_YONTEMI" ColumnName="ODEME_YONTEMI" />
+          <ScalarProperty Name="BAYI_ID" ColumnName="BAYI_ID" />
+          <ScalarProperty Name="FIRMA_ID" ColumnName="FIRMA_ID" />
+          <ScalarProperty Name="SIPARIS_ID" ColumnName="SIPARIS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_SIPARIS">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_SIPARIS">
+        <MappingFragment StoreEntitySet="TBL_SIPARIS">
+          <ScalarProperty Name="SIPARIS_ID" ColumnName="SIPARIS_ID" />
+          <ScalarProperty Name="URUN_ID" ColumnName="URUN_ID" />
+          <ScalarProperty Name="BAYI_ID" ColumnName="BAYI_ID" />
+          <ScalarProperty Name="URUN_ADET" ColumnName="URUN_ADET" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="ALIS_FIYAT" ColumnName="ALIS_FIYAT" />
+          <ScalarProperty Name="TUTAR" ColumnName="TUTAR" />
+          <ScalarProperty Name="TEMIN_SURESI" ColumnName="TEMIN_SURESI" />
+          <ScalarProperty Name="FIRMA_ID" ColumnName="FIRMA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_URUN">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_URUN">
+        <MappingFragment StoreEntitySet="TBL_URUN">
+          <ScalarProperty Name="URUN_ID" ColumnName="URUN_ID" />
+          <ScalarProperty Name="URUN_ADI" ColumnName="URUN_ADI" />
+          <ScalarProperty Name="URUN_MODEL" ColumnName="URUN_MODEL" />
+          <ScalarProperty Name="URUN_EBAT" ColumnName="URUN_EBAT" />
+          <ScalarProperty Name="P_BAKIM_SURESI" ColumnName="P_BAKIM_SURESI" />
+          <ScalarProperty Name="ALIS_FIYAT" ColumnName="ALIS_FIYAT" />
+          <ScalarProperty Name="SATIS_FIYAT" ColumnName="SATIS_FIYAT" />
+          <ScalarProperty Name="KAR" ColumnName="KAR" />
+          <ScalarProperty Name="TEMIN_SURESI" ColumnName="TEMIN_SURESI" />
+          <ScalarProperty Name="STOK_ADEDI" ColumnName="STOK_ADEDI" />
+          <ScalarProperty Name="STOK_ESIK_DEGERI" ColumnName="STOK_ESIK_DEGERI" />
+          <ScalarProperty Name="RESIM" ColumnName="RESIM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_YONETICI">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_YONETICI">
+        <MappingFragment StoreEntitySet="TBL_YONETICI">
+          <ScalarProperty Name="YONETICI_ID" ColumnName="YONETICI_ID" />
+          <ScalarProperty Name="FIRMA_ID" ColumnName="FIRMA_ID" />
+          <ScalarProperty Name="YONETICI_AD" ColumnName="YONETICI_AD" />
+          <ScalarProperty Name="YONETICI_SOYAD" ColumnName="YONETICI_SOYAD" />
+          <ScalarProperty Name="KULLANICI_ADI" ColumnName="KULLANICI_ADI" />
+          <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_M_URUNLER">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_M_URUNLER">
+        <MappingFragment StoreEntitySet="TBL_M_URUNLER">
+          <ScalarProperty Name="M_URUNLER_ID" ColumnName="M_URUNLER_ID" />
+          <ScalarProperty Name="MUSTERI_ID" ColumnName="MUSTERI_ID" />
+          <ScalarProperty Name="URUN_ID" ColumnName="URUN_ID" />
+          <ScalarProperty Name="P_BAKIM_SURESI" ColumnName="P_BAKIM_SURESI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_SATIS">
+      <EntityTypeMapping TypeName="LSYSModel.TBL_SATIS">
+        <MappingFragment StoreEntitySet="TBL_SATIS">
+          <ScalarProperty Name="SATIS_ID" ColumnName="SATIS_ID" />
+          <ScalarProperty Name="BAYI_ID" ColumnName="BAYI_ID" />
+          <ScalarProperty Name="MUSTERI_ID" ColumnName="MUSTERI_ID" />
+          <ScalarProperty Name="URUN_ID" ColumnName="URUN_ID" />
+          <ScalarProperty Name="SATIS_FIYAT" ColumnName="SATIS_FIYAT" />
+          <ScalarProperty Name="ADET" ColumnName="ADET" />
+          <ScalarProperty Name="BIRIM_KAR" ColumnName="BIRIM_KAR" />
+          <ScalarProperty Name="TOPLAM_KAR" ColumnName="TOPLAM_KAR" />
+          <ScalarProperty Name="MALIYET" ColumnName="MALIYET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

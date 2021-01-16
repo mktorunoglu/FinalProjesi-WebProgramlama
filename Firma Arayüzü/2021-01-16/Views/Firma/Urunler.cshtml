@@ -1,0 +1,81 @@
+﻿@using LSYSweb.Models.Entity
+@model List<TBL_URUN>
+
+@{
+    ViewBag.Title = "Urunler";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .urun {
+            margin: 20px;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        h2 {
+            padding: 20px;
+        }
+
+        td {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Ürünler</h2>
+    <div class="row">
+        @foreach (var urn in Model)
+        {
+        <div class="urun col-lg-2 col-md-3 col-sm-4 form-group">
+            <img src="@urn.RESIM" class="img-responsive img1 col-lg-12 col-md-12 col-sm-12 form-group">
+            <h5 class="text-center"><b>@urn.URUN_ADI</b></h5>
+            <table class="table table-condensed table-hover">
+                <tbody>
+                    <tr>
+                        <td>Model</td>
+                        <td><b>@urn.URUN_MODEL</b></td>
+                    </tr>
+                    <tr>
+                        <td>Ebat</td>
+                        <td><b>@urn.URUN_EBAT</b></td>
+                    </tr>
+                    <tr>
+                        <td>Garanti Süresi (Ay)</td>
+                        <td><b>@urn.P_BAKIM_SURESI</b></td>
+                    </tr>
+                    <tr>
+                        <td>Stok Adeti</td>
+                        <td><b>@urn.STOK_ADEDI</b></td>
+                    </tr>
+                    <tr>
+                        <td>Stok Eşiği</td>
+                        <td><b>@urn.STOK_ESIK_DEGERI</b></td>
+                    </tr>
+                    <tr>
+                        <td>Temin Süresi (Gün)</td>
+                        <td><b>@urn.TEMIN_SURESI</b></td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>Fiyat</td>
+                        <td><b>@urn.SATIS_FIYAT&#8378;</b></td>
+                    </tr>
+                </tbody>
+                <a href="/Recete/Index/@urn.URUN_ID" class="btn btn-info">Reçete</a>
+            </table>
+        </div>
+        }
+    </div>
+    <div class="mh-100" style="height: 20px;"></div><hr>
+    <p style="text-align: center;">© 2020 Akın Lift. Tüm Hakları Saklıdır. Akın Lift, akinlift.com ve Akın Lift logosu, Akın Lift'in Türkiye'deki ticari markalarıdır.</p>
+</body>
+</html>
+
